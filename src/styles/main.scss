@@ -4,10 +4,6 @@
   'abstracts/mixins',
   'abstracts/placeholders';
 
-@import 'themes/theme';
-
-@import 'vendors/bootstrap';
-
 @import
   'base/reset',
   'base/typography';
@@ -16,19 +12,10 @@
   'layout/header',
   'layout/footer';
 
- @import
-  'components/checkbox',
+   @import
   'components/button',
-  'components/icon',
-  'components/input',
-  'components/card',
-  'components/spinner',
-  'components/skeleton';
+  'components/input';
 
-@import
-  'pages/common',
-  'pages/signin-callback-page',
-  'pages/detail-page',
-  'pages/home-page',
-  'pages/not-found-page';
 
+
+  // Start Here but prepare notes for I can break up into components
