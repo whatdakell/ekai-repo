@@ -6,10 +6,10 @@
 .pricing-section {
 	padding: 3rem 2rem;
 	text-align: center;
-	background: linear-gradient(to bottom, #fff6d8, #ffeec2);
+	// background: linear-gradient(to bottom, #fff6d8, #ffeec2);
 
 	h2 {
-		margin-bottom: 2rem;
+		// margin-bottom: 2rem;
 	}
 
 	.pricing-grid {
@@ -24,6 +24,7 @@
 		min-height: 263px;
 		box-sizing: content-box;
 		padding: 20px;
+		margin: 30px auto;
 		.price {
 			text-align: center;
 			margin-bottom: 20px;
@@ -33,11 +34,17 @@
 	// border-radius: 20px;
 	// border: solid 2px #ffd97f;
 	// background-color: #fff3d5;
+	.list-items,
 	.border-wrapper {
 		padding: 20px;
 		border-radius: 20px;
 		// border: solid 2px #ffd97f;
 		// background-color: #fff3d5;
+	}
+	.list-items {
+		background-color: white;
+		padding-left: 50px !important;
+		// padding-left: 20px;
 	}
 	.pricing-card {
 		position: relative;
@@ -96,9 +103,35 @@
 		}
 
 		.sub-card {
-			background: #fff8e0;
+			// background: #fff8e0;
 			border-radius: 12px;
-			padding: 1rem;
+			// padding: 1rem;
+			position: relative;
+			li {
+				list-style-type: none;
+				padding-left: 50px;
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+			ul li:before {
+				content: '';
+				background-image: url('/images/check_circle.svg');
+				left: 20px;
+				position: absolute;
+				// width: 10px;
+				// background: yellow;
+				// border-radius: 100%;
+				// height: auto;
+				padding: 10px;
+				height: 10px;
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-size: 20px;
+				background-repeat: no-repeat;
+			}
 			// border: 1px solid #ffd97f;
 
 			.t30-text {
@@ -113,7 +146,7 @@
 			}
 
 			ul {
-				padding-left: 1.2rem;
+				padding-left: 0;
 
 				li {
 					margin-bottom: 0.5rem;

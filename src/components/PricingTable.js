@@ -53,8 +53,8 @@ export default function PricingTable() {
 							<h4 className='t30-text border-wrapper'>{plan.subPlan.title}</h4>
 							<ul>
 								{plan.subPlan.features.map((feature, i) => (
-									<li key={i} className='border-wrapper'>
-										{feature}
+									<li className='list-items' key={i}>
+										<p>{feature}</p>
 									</li>
 								))}
 							</ul>

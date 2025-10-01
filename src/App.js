@@ -9,6 +9,7 @@ import Team from './components/Team';
 import HoverTimeline from './components/HoverTimeline';
 
 import PricingTable from './components/PricingTable';
+import Faq from './components/Faq';
 
 function App() {
 	return (
@@ -134,6 +135,7 @@ function App() {
 				</section>
 				<PricingTable />
 			</div>
+			<Faq />
 		</div>
 	);
 }
