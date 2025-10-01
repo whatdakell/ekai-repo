@@ -2,13 +2,12 @@
 * @desc         overrides default bootstrap styles.
 * @requires     variables.scss, functions.scss
 */
-
 // colors
 $theme-colors: (
-  "primary": $primary-dark-color,
-  "danger": $danger-dark-color,
-  "success": $action-dark-color,
-  "dark": $gray-color-3
+	'primary': $primary-dark-color,
+	'danger': $danger-dark-color,
+	'success': $action-dark-color,
+	'dark': $gray-color-3,
 );
 
 // body
@@ -44,7 +43,7 @@ $list-group-bg: $transparent-color;
 // breadcrub
 $breadcrumb-bg: $white-color-1;
 $breadcrumb-margin-bottom: $breadcrumb-bottom-margin;
-$breadcrumb-padding-y : 0;
+$breadcrumb-padding-y: 0;
 $breadcrumb-padding-x: 0;
 
 // modal

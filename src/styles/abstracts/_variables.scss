@@ -5,7 +5,7 @@
 
 // [color - variables]
 // branding
-$primary-dark-color: #1565c0;
+$primary-dark-color: #131317;
 $primary-light-color: #2699fb;
 $action-dark-color: #008a00;
 $action-light-color: #02a257;
@@ -20,11 +20,12 @@ $transparent-color: transparent;
 // whites
 $white-color-1: #ffffff;
 
+// #454752
 // grays
 $gray-color-1: #f4f6f8;
 $gray-color-2: #d2dae2;
-$gray-color-3: #8c96a9;
-$gray-color-4: #485460;
+$gray-color-3: #131317;
+$gray-color-4: #454752;
 $gray-color-5: #333333;
 $gray-color-6: #1d2b33;
 
@@ -38,7 +39,7 @@ $input-placeholder-color: $gray-color-2;
 // body
 $body-background: $gray-color-1;
 // badge - pill
-$badge-pill-bg: rgba($primary-dark-color, .1);
+$badge-pill-bg: rgba($primary-dark-color, 0.1);
 // footer
 $footer-bg: $primary-dark-color;
 // [text - variables]
@@ -51,10 +52,16 @@ $text-title-color: $gray-color-4;
 $text-hover-color: $text-primary-color;
 $text-white-color: $white-color-1;
 
+// .inter-<uniquifier> {
+//   font-family: "Inter", sans-serif;
+//   font-optical-sizing: auto;
+//   font-weight: <weight>;
+//   font-style: normal;
+// }
 // font family
-$font-family-default: 'circular-regular', sans-serif;
-$font-family-default-m: 'circular-medium', sans-serif;
-$font-family-code: Consolas, Monaco, "Lucida Console", monospace;
+$font-family-default: 'Inter', sans-serif;
+$font-family-default-m: 'Roboto Serif', serif;
+$font-family-code: 'Inter', sans-serif;
 
 // font weights
 $font-w-light: 300;
@@ -66,12 +73,16 @@ $font-w-semi-bold: 600;
 $font-s-xsmall: 12px;
 $font-s-small: 14px;
 $font-s-regular: 16px; // -> base size
-$font-s-medium: 18px; 
+$font-s-medium: 18px;
 $font-s-big: 20px;
 $font-s-large: 22px; // ->  x size
 $font-s-xlarge: 25px; // -> xx size
 $font-s-xxlarge: 32px;
 $font-s-xxxlarge: 38px;
+
+//
+$h1-font-size: 92.8px;
+$h2-font-size: 64px;
 
 // inline hights
 $base-line-height: normal;
@@ -98,18 +109,18 @@ $primary-hover-color-3: rgba($primary-dark-color, 0.6);
 // [breakpoint - variables]
 // breakpoints
 $breakpoints: (
-  "small": (
-    min-width: 576px
-  ),
-  "medium": (
-    min-width: 768px
-  ),
-  "large": (
-    min-width: 992px
-  ),
-  "extra": (
-    min-width: 1200px
-  )
+	'small': (
+		min-width: 576px,
+	),
+	'medium': (
+		min-width: 768px,
+	),
+	'large': (
+		min-width: 992px,
+	),
+	'extra': (
+		min-width: 1200px,
+	),
 );
 
 // [margins and paddings - variables]

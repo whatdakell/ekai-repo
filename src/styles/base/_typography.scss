@@ -3,15 +3,15 @@
 * @requires     variables.scss
 */
 body {
-  line-height: $base-line-height;
-  color: $text-default-color;
+	line-height: $base-line-height;
+	color: $text-default-color;
 }
 
 body,
 input,
 select,
 textarea {
-  font-family: $font-family-default;
+	font-family: $font-family-default;
 }
 
 // headings and paragraph
@@ -21,28 +21,59 @@ h3,
 h4,
 h5,
 h6 {
-  font-style: normal;
-  font-family: $font-family-default-m;
+	margin: 0;
+	// font-style: normal;
+	font-family: $font-family-default;
+	line-height: 0.94;
+
+	// font-stretch: normal;
+	// font-style: normal;
+
+	em {
+		font-weight: normal;
+		font-family: $font-family-default-m;
+	}
 }
 
 h1 {
-  font-size: $font-s-xlarge;
+	font-size: $h1-font-size;
+	font-weight: $font-w-medium;
+	line-height: 0.94;
+	letter-spacing: -2.79px;
 }
 h2 {
-  font-size: $font-s-large;
+	font-size: $h2-font-size;
+	font-weight: $font-w-medium;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 0.94;
+	letter-spacing: -1.92px;
+	text-align: center;
+	color: #454752;
 }
-h3,
-h4,
-h5,
-h6 {
-  font-size: $font-s-medium;
+h3 {
+	font-size: 40px;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 0.94;
+	letter-spacing: -1.2px;
+	text-align: center;
+	color: #454752;
 }
+// h3,
+// h4,
+// h5,
+// h6 {
+// 	font-size: $font-s-medium;
+// }
 
 p {
-  font-size: $font-s-medium;
+	font-size: $font-s-medium;
+	color: $gray-color-3;
 }
 
 pre,
 code {
-  font-family: $font-family-code;
+	font-family: $font-family-code;
 }
