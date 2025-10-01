@@ -1,0 +1,130 @@
+/**
+* @desc         card styles.
+* @requires     variables.scss
+*/
+@import '../abstracts/mixins';
+.pricing-section {
+	padding: 3rem 2rem;
+	text-align: center;
+	background: linear-gradient(to bottom, #fff6d8, #ffeec2);
+
+	h2 {
+		margin-bottom: 2rem;
+	}
+
+	.pricing-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 2rem;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+	.top-price {
+		background-color: white;
+		min-height: 263px;
+		box-sizing: content-box;
+		padding: 20px;
+		.price {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	}
+	//  padding: 20px;
+	// border-radius: 20px;
+	// border: solid 2px #ffd97f;
+	// background-color: #fff3d5;
+	.border-wrapper {
+		padding: 20px;
+		border-radius: 20px;
+		// border: solid 2px #ffd97f;
+		// background-color: #fff3d5;
+	}
+	.pricing-card {
+		position: relative;
+		overflow: hidden;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			padding: 3px; /* border thickness */
+			border-radius: inherit;
+			background: linear-gradient(to top, #ffd97f, #ffd97f 51%, #fefffe);
+			-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude; /* only the ring remains */
+			pointer-events: none;
+		}
+
+		&:nth-child(2) {
+			.sub-card .t30-text {
+				background-color: #ffd97f;
+				border: none;
+			}
+		}
+		&:nth-child(3) {
+			.sub-card .t30-text {
+				border: none;
+				background-color: #ffb401;
+			}
+		}
+		background: linear-gradient(to bottom, #fffdf7 0%, #fff3d5 25%, #fff3d5 95%, #fff3d5ae 100%);
+
+		// background-image: linear-gradient(to bottom, #fff3d5, #fff3d5), linear-gradient(to bottom, rgba(255, 243, 213, 0), #fff3d5, #ffd97f);
+		border-radius: 12px;
+		padding: 1.5rem;
+		// box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		text-align: left;
+
+		h3 {
+			// font-size: 1.25rem;
+			margin-bottom: 0.25rem;
+		}
+
+		.price {
+			// font-weight: bold;
+			color: #454752;
+			margin-bottom: 1rem;
+		}
+
+		.description {
+			margin-bottom: 1.5rem;
+			padding-left: 1.2rem;
+
+			li {
+				margin-bottom: 0.5rem;
+			}
+		}
+
+		.sub-card {
+			background: #fff8e0;
+			border-radius: 12px;
+			padding: 1rem;
+			// border: 1px solid #ffd97f;
+
+			.t30-text {
+				border: solid 2px #ffd97f;
+				background-color: #fff3d5;
+			}
+
+			h4 {
+				// font-size: 1rem;
+				// font-weight: 600;
+				margin-bottom: 0.75rem;
+			}
+
+			ul {
+				padding-left: 1.2rem;
+
+				li {
+					margin-bottom: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.note {
+		margin-top: 1rem;
+		font-size: 0.9rem;
+		color: #444;
+	}
+}

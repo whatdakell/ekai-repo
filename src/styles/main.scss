@@ -6,17 +6,47 @@
 
 @import 'components/button', 'components/input';
 
+html {
+	font-size: 1rem;
+	// @media (max-width: 1380px) {
+	// 	font-size: 0.88rem;
+	// }
+	// @include bp(desktop) {
+	// 	font-size: 0.8rem;
+	// }
+	@include bp(M) {
+		font-size: 0.7rem;
+	}
+	@include bp(S) {
+		font-size: 0.55rem;
+	}
+}
+
 .center {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
+.border-card {
+	padding: 40px;
+	border-radius: 20px;
+}
 .box-background {
 	background-image: url('/images/background.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-size: 98% auto;
-	background-position: top center;
+	background-size: 1380px auto;
+	background-position: center top;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	&.reverse {
+		background-image: url('/images/background-reverse.png');
+	}
+	&.full {
+		background-image: url('/images/background-full.png');
+		background-position: center 300px;
+	}
 }
 
 .inner-max-width {
@@ -29,6 +59,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 913px;
+		width: 100%;
 	}
 }
 body {
@@ -38,7 +69,10 @@ body {
 
 .content {
 	text-align: center;
-	padding: toRem(320) 2rem;
+	margin: toRem(150) auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 // Start of second section
@@ -46,15 +80,39 @@ body {
 	text-align: center;
 	margin-top: 60px;
 	margin-bottom: 60px;
+	.figure {
+		max-width: 600px;
+		width: 100%;
+		margin: 60px auto;
+	}
+	p {
+		text-align: center;
+	}
+	&-p {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		width: 438px;
+	}
 	&-left {
 		text-align: left;
 		display: flex;
 		h2 {
 			text-align: left;
 		}
+		p {
+			width: 438px;
+			text-align: left;
+		}
 	}
 	h2 {
 		margin-bottom: 50px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:has(~ .figure, ~ .cards) {
+			margin-bottom: 0;
+		}
 	}
 }
 
@@ -63,8 +121,9 @@ body {
 	justify-content: center;
 	gap: 2rem;
 	flex-wrap: wrap;
-	margin-top: toRem(60);
+	// margin-top: toRem(60);
 	margin-bottom: toRem(60);
+
 	.card {
 		background: #fff3da;
 		padding: toRem(40);
@@ -91,34 +150,32 @@ body {
 			}
 		}
 	}
+	&.two-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr; /* Defines two columns of equal width */
+		grid-template-rows: auto auto;
+		.card {
+			text-align: left;
+			h3 {
+				text-align: left;
+			}
+			background-color: white;
+			// max-width: 569px;
+			flex: auto;
+		}
+	}
 }
 
 .steps-section {
-	background: #f9f5e7;
 	padding: 2rem;
+	width: 100%;
 	position: relative;
 }
 
-// .slider-section {
-// 	display: flex;
-// 	flex-direction: column;
-// }
-
-// .slider {
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	gap: 1rem;
-// 	flex-direction: column;
-// 	position: relative;
-// 	.slide {
-// 		background: #fff8dd;
-// 		padding: 2rem;
-// 		border-radius: 12px;
-// 		max-width: 500px;
-// 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-// 	}
-// }
+.slider-section {
+	display: flex;
+	flex-direction: column;
+}
 
 .nav-btns {
 	position: absolute;
@@ -143,19 +200,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	margin: 2rem auto;
-	// max-width: 900px;
 }
-
-// .slider-wrapper {
-// 	overflow: hidden;
-// 	width: 100%;
-// }
-
-// .slider-track {
-// 	display: flex;
-// 	transition: transform 0.5s ease-in-out;
-// 	max-width: 500px;
-// }
 
 .slider-container {
 	position: relative;
@@ -178,20 +223,15 @@ body {
 
 .slide {
 	min-width: 100%;
-	background: #fff6e0;
-	border-radius: 12px;
-	padding: 2rem;
-	margin: 4rem 20px;
+	margin: 1rem 20px;
 	text-align: left;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 	flex: 0 0 100%; // each slide exactly full width
 	box-sizing: border-box;
 	background: #fff6e0;
 	border-radius: 12px;
 	padding: 2rem;
-	margin: 0 0.5rem; // spacing between cards
+	// margin: 0 0.5rem; // spacing between cards
 	text-align: center;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 // Next Section

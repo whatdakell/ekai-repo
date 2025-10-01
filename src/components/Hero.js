@@ -14,16 +14,16 @@ function Hero({ headline, copy }) {
 			</div>
 			<ul className='steps'>
 				<li className='step'>
-					1. <span class='li-separator'>Connect to data platforms</span>
+					1. <span className='li-separator'>Connect to data platforms</span>
 				</li>
 				<li className='step'>
-					2. <span class='li-separator'>Provide analytical requirements</span>
+					2. <span className='li-separator'>Provide analytical requirements</span>
 				</li>
 				<li className='step'>
-					3. <span class='li-separator'>Generate code package</span>
+					3. <span className='li-separator'>Generate code package</span>
 				</li>
 				<li className='step'>
-					4. <span class='li-separator'>Publish and review</span>
+					4. <span className='li-separator'>Publish and review</span>
 				</li>
 			</ul>
 		</div>

@@ -25,58 +25,71 @@ const steps = [
 ];
 
 function Slider() {
-	const [current, setCurrent] = useState(1); // start at first REAL slide
-	const [transitioning, setTransitioning] = useState(true);
-	const trackRef = useRef(null);
+	const [current, setCurrent] = useState(0); // start at first REAL slide
+	// const [transitioning, setTransitioning] = useState(true);
+	// const trackRef = useRef(null);
 
-	const slides = [
-		steps[steps.length - 1], // clone of last
-		...steps,
-		steps[0], // clone of first
-	];
+	// const slides = [
+	// 	steps[steps.length - 1], // clone of last
+	// 	...steps,
+	// 	steps[0], // clone of first
+	// ];
+
+	// const prevSlide = () => {
+	// 	setCurrent((prev) => prev - 1);
+	// };
+
+	// const nextSlide = () => {
+	// 	setCurrent((prev) => prev + 1);
+	// };
+
+	// const [current, setCurrent] = useState(0);
 
 	const prevSlide = () => {
-		setCurrent((prev) => prev - 1);
+		if (current > 0) setCurrent(current - 1);
 	};
 
 	const nextSlide = () => {
-		setCurrent((prev) => prev + 1);
+		if (current < steps.length - 1) setCurrent(current + 1);
 	};
 
-	const handleTransitionEnd = () => {
-		if (current === 0) {
-			// If we're on the fake last slide (clone), jump to real last
-			setTransitioning(false);
-			setCurrent(steps.length);
-		} else if (current === steps.length + 1) {
-			// If we're on the fake first slide (clone), jump to real first
-			setTransitioning(false);
-			setCurrent(1);
-		}
-	};
+	// const handleTransitionEnd = () => {
+	// 	if (current === 0) {
+	// 		// If we're on the fake last slide (clone), jump to real last
+	// 		setTransitioning(false);
+	// 		setCurrent(steps.length);
+	// 	} else if (current === steps.length + 1) {
+	// 		// If we're on the fake first slide (clone), jump to real first
+	// 		setTransitioning(false);
+	// 		setCurrent(1);
+	// 	}
+	// };
 
-	// Re-enable transition AFTER jump (to avoid animation flicker)
-	useEffect(() => {
-		if (!transitioning) {
-			requestAnimationFrame(() => {
-				setTransitioning(true);
-			});
-		}
-	}, [transitioning]);
+	// // Re-enable transition AFTER jump (to avoid animation flicker)
+	// useEffect(() => {
+	// 	if (!transitioning) {
+	// 		requestAnimationFrame(() => {
+	// 			setTransitioning(true);
+	// 		});
+	// 	}
+	// }, [transitioning]);
 
 	return (
 		<div className='slider'>
 			<div className='slider-wrapper'>
 				<div
-					ref={trackRef}
+					// ref={trackRef}
 					className='slider-track'
 					style={{
-						transform: `translateX(-${current * 105}%)`,
-						transition: transitioning ? 'transform 0.5s ease-in-out' : 'none',
+						transform: `translateX(-${current * 100}%)`,
 					}}
-					onTransitionEnd={handleTransitionEnd}
+					// style={{
+					// 	transform: `translateX(-${current * 105}%)`,
+					// 	transition: transitioning ? 'transform 0.5s ease-in-out' : 'none',
+					// }}
+					// onTransitionEnd={handleTransitionEnd}
 				>
-					{slides.map((step, index) => (
+					{steps.map((step, index) => (
 						<div key={index} className='slide'>
 							<h3>{step.title}</h3>
 							<p>{step.text}</p>
