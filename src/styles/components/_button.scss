@@ -4,10 +4,9 @@
 */
 
 .btn {
-	// background: #f9c54a;
-	// color: #000;
 	padding: 0.75rem 1.25rem;
-	// border-radius: 8px;
+	min-width: 140px;
+	text-align: center;
 	text-decoration: none;
 	font-weight: normal;
 	display: inline-block;
@@ -16,23 +15,8 @@
 	border-radius: 4px;
 	border: solid 0.6px #fefffe;
 	background-color: #fefffe;
+	color: #131317;
 	&-gradient {
-		// border-radius: 6px;
-		// border-style: solid;
-		// border-width: 3px;
-		// border-image-source: linear-gradient(to right, #ffb401, #ffd97f 51%, #fefffe);
-		// border-image-slice: 1;
-		// background-image: linear-gradient(to bottom, #ffd97f, #ffd97f), linear-gradient(to right, #ffb401, #ffd97f 51%, #fefffe);
-		// background-origin: border-box;
-		// background-clip: content-box, border-box;
-		// &:after {
-		// 	content: '';
-		// 	border-image-source: linear-gradient(to right, #ffb401, #ffd97f 51%, #fefffe);
-		// 	border-image-slice: 1;
-		// 	background-image: linear-gradient(to bottom, #ffd97f, #ffd97f), linear-gradient(to right, #ffb401, #ffd97f 51%, #fefffe);
-		// 	background-origin: border-box;
-		// 	background-clip: content-box, border-box;
-		// }
 		position: relative;
 		border: none;
 		background-color: #ffd97f;
@@ -48,53 +32,12 @@
 			mask-composite: exclude; /* only the ring remains */
 			pointer-events: none;
 		}
-		// background: linear-gradient(180deg, #ffe082 0%, #ffca28 100%);
-		// border: 2px solid #fff;
-		// border-radius: 8px;
-		// padding: 0.75rem 1.5rem;
-		// font-size: 1rem;
-		// font-weight: 500;
-		// color: #222;
-		// cursor: pointer;
+	}
+	&.white {
+		background-color: white !important;
 	}
 	&-yellow {
 		border: solid 0.9px #fefffe;
 		background-color: #ffd97f;
 	}
-}
-
-// .btn-cg {
-// 	display: flex;
-// 	justify-content: center;
-// 	// width: max-content;
-// 	// padding: $button-default-padding;
-// 	// border-radius: $border-radius-1;
-// 	font-size: 15px;
-// 	font-weight: normal;
-// 	font-stretch: normal;
-// 	font-style: normal;
-// 	line-height: normal;
-// 	letter-spacing: -0.08px;
-// 	text-align: center;
-// 	color: #131317;
-// 	padding: 14.1px;
-// 	border-radius: 4px;
-// 	border: solid 0.6px #fefffe;
-// 	background-color: #fefffe;
-// 	&.white {
-// 		color: $primary-dark-color;
-// 		background: $white-color-1;
-// 		border-color: $gray-color-2;
-// 		&:hover {
-// 			border-color: $primary-dark-color;
-// 		}
-// 	}
-
-// 	&.round {
-// 		border-radius: 50px;
-// 	}
-// }
-
-.margin-bottom-40 {
-	margin-bottom: 40px;
 }

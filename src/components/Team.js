@@ -6,21 +6,21 @@ import '../styles/components/_team.scss';
 const team = [
 	{
 		name: 'Mo Aidrus',
-		title: 'Co-founder & Chief Executive Officer',
+		title: 'Co-founder <br>& Chief Executive Officer',
 		image: '/images/mo.jpg',
 		shortBio: 'As a x2 founder, and a long-time advocate for freeing trapped data value inside the enterprise, Mo spent 20+ years as Managing Director at Accenture & Rayn before setting out to build Ekai.',
 		fullBio: 'As a x2 founder, and a long-time advocate for freeing trapped data value inside the enterprise, Mo spent 20+ years as Managing Director at Accenture & Rayn before setting out to build Ekai. With deep experience in enterprise strategy and execution, Mo continues to lead Ekai’s mission to simplify analytics for all.',
 	},
 	{
 		name: 'Hussnain Ahmed',
-		title: 'Co-founder & Chief AI Officer',
+		title: 'Co-founder <br>& Chief AI Officer',
 		image: '/images/hussnain.jpg',
 		shortBio: 'Hussnain puts the AI in Ekai. He brings 20+ years of experience architecting innovative data strategy by introducing AI operations to tech teams.',
 		fullBio: 'Hussnain puts the AI in Ekai. He brings 20+ years of experience architecting innovative data strategy by introducing AI operations to tech teams. Previously, he held senior leadership roles at IBM and Accenture, where he led enterprise-wide AI and automation initiatives.',
 	},
 	{
 		name: 'Tero Miikki',
-		title: 'Chief Commercial Officer & Global Partnership Lead',
+		title: 'Chief Commercial Officer <br>& Global Partnership Lead',
 		image: '/images/tero.png',
 		shortBio: 'Tero is a seasoned data leader and entrepreneur. As a CDO and data leader he has led major data/AI transformation and governance programs at UPM, a global manufacturing company & advanced engineering practices at Microsoft.',
 		fullBio:
@@ -45,7 +45,7 @@ export default function Team() {
 					return (
 						<div key={index} className={`team-card ${isExpanded ? 'expanded' : ''}`}>
 							<h3>{member.name}</h3>
-							<p className='title center'>{member.title}</p>
+							<p className='title center' dangerouslySetInnerHTML={{ __html: member.title }}></p>
 							<img src={member.image} alt={member.name} />
 
 							<p className='bio'>{isExpanded ? member.fullBio : member.shortBio}</p>

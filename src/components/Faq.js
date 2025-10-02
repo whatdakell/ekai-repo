@@ -7,7 +7,7 @@ const faqs = [
 	},
 	{
 		question: 'Who is Ekai for?',
-		answer: `We like to say “Ekai is for everyone!” and we mean it. Ekai empowers everyone who has a passion for data, with or without IT skills. Ekai enables any business function to skip waiting on data teams and get straight to prepped data they need, speeding up time-to-value. Businesses can rapidly innovate in their own data domains. IT meanwhile, gets full documentation for easy governance.`,
+		answer: `We like to say “Ekai is for everyone!” and we mean it.<br><br>Ekai empowers everyone who has a passion for data, with or without IT skills. Ekai enables any business function to skip waiting on data teams and get straight to prepped data they need, speeding up time-to-value. Businesses can rapidly innovate in their own data domains. IT meanwhile, gets full documentation for easy governance.`,
 	},
 	{
 		question: 'How can Ekai help me or my team?',
@@ -35,19 +35,19 @@ export default function Faq() {
 	};
 
 	return (
-		<div className='faq-section'>
+		<div className='faq-section inner-max-width'>
 			<h2>FAQs</h2>
 
 			<div className='faq-list'>
 				{faqs.map((faq, index) => (
 					<div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`} onClick={() => toggle(index)}>
 						<div className='faq-question'>
-							<span>{faq.question}</span>
+							<span className='heading-3'>{faq.question}</span>
 							<span className='icon'>{activeIndex === index ? '−' : '+'}</span>
 						</div>
 						{activeIndex === index && (
 							<div className='faq-answer'>
-								<p>{faq.answer}</p>
+								<p dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
 							</div>
 						)}
 					</div>

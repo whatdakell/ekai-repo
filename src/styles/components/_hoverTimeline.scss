@@ -11,6 +11,7 @@
 	border-radius: 12px;
 	padding: 2rem;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	box-sizing: border-box;
 }
 
 .how-header {
@@ -26,8 +27,8 @@
 	}
 
 	p {
-		color: #444;
-		font-size: 0.95rem;
+		// color: #444;
+		// font-size: 0.95rem;
 	}
 }
 
@@ -79,8 +80,8 @@
 
 		&-content {
 			margin-top: 30px;
-			font-size: 0.95rem;
-			line-height: 1.4;
+			// font-size: 0.95rem;
+			// line-height: 1.4;
 			color: #131317;
 			opacity: 0;
 			animation: fadeIn 0.3s forwards;

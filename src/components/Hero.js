@@ -1,30 +1,22 @@
 import React from 'react';
 import '../styles/components/_hero.scss';
-// import './styles/main.scss';
-
-function Hero({ headline, copy }) {
+import Button from './Button';
+function Hero({ headline, copy, steps }) {
 	return (
 		<div className='Hero'>
 			<div className='inner-max-width-tight'>
 				<h1 className='heading-level-1' dangerouslySetInnerHTML={{ __html: headline }}></h1>
 				<p dangerouslySetInnerHTML={{ __html: copy }}></p>
-				<a href='#' className='btn'>
-					Contact us
-				</a>
+				<Button href='#' text='Contact us'></Button>
 			</div>
 			<ul className='steps'>
-				<li className='step'>
-					1. <span className='li-separator'>Connect to data platforms</span>
-				</li>
-				<li className='step'>
-					2. <span className='li-separator'>Provide analytical requirements</span>
-				</li>
-				<li className='step'>
-					3. <span className='li-separator'>Generate code package</span>
-				</li>
-				<li className='step'>
-					4. <span className='li-separator'>Publish and review</span>
-				</li>
+				{steps.map((step, index) => {
+					return (
+						<li className='step' key={`step-${index}`}>
+							{index + 1}. <span className='li-separator'>{step}</span>
+						</li>
+					);
+				})}
 			</ul>
 		</div>
 	);

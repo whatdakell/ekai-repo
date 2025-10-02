@@ -81,8 +81,8 @@ $font-s-xxlarge: 32px;
 $font-s-xxxlarge: 38px;
 
 //
-$h1-font-size: 92.8px;
-$h2-font-size: 64px;
+$h1-font-size: toRem(92.8);
+$h2-font-size: toRem(64);
 
 // inline hights
 $base-line-height: normal;

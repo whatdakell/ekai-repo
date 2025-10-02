@@ -44,7 +44,9 @@ export default function PricingTable() {
 							<p className='price t30-text'>{plan.price}</p>
 							<ul className='description'>
 								{plan.description.map((item, i) => (
-									<li key={i}>{item}</li>
+									<li key={i}>
+										<p>{item}</p>
+									</li>
 								))}
 							</ul>
 						</div>
@@ -63,7 +65,7 @@ export default function PricingTable() {
 				))}
 			</div>
 
-			<p className='note'>Ekai also offers add-on pricing, volume, and payment discounts. Contact one of our team to learn more.</p>
+			<p className='note center'>Ekai also offers add-on pricing, volume, and payment discounts. Contact one of our team to learn more.</p>
 		</div>
 	);
 }

@@ -5,7 +5,7 @@ import Slider from './Slider';
 
 function SliderSection({}) {
 	return (
-		<div className='slider-section content'>
+		<div className='slider-section'>
 			<div className='copy-box  copy-box-left inner-max-width'>
 				<h2>
 					Ekai exists because using data <em>should</em> be easy

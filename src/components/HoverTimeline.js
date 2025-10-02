@@ -22,7 +22,6 @@ export default function HoverTimeline() {
 				<h2>How it works</h2>
 				<p>Our platform understands your data and builds a logical model as the foundation for your analytics. Guided by our AI assistant, your team can easily create semantic models tailored to your business use cases—making getting the answers you need both easy and actionable. Our autonomous AI agents are designed to handle each step with a few questions from you.</p>
 			</div>
-
 			{/* Progress Bar */}
 			<div className='progress-bar'>
 				<div
@@ -36,7 +35,7 @@ export default function HoverTimeline() {
 			{/* Steps */}
 			<div className='timeline-steps'>
 				{steps.map((step) => (
-					<div key={step.id} className={`timeline-step ${active === step.id ? 'active' : ''}`} onMouseEnter={() => setActive(step.id)} onMouseLeave={() => setActive(null)}>
+					<div key={step.id} className={`timeline-step ${active === step.id ? 'active' : ''}`} onClick={() => setActive(step.id)} onMouseEnter={() => setActive(step.id)} onMouseLeave={() => setActive(null)}>
 						<div className='timeline-step-header'>
 							<span className='timeline-step-num heading-3'>{`0${step.id}`}</span>
 							<span className='timeline-step-title heading-3'>{step.title}</span>

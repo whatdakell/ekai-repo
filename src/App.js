@@ -10,52 +10,42 @@ import HoverTimeline from './components/HoverTimeline';
 
 import PricingTable from './components/PricingTable';
 import Faq from './components/Faq';
+import Footer from './components/Footer';
+import { content } from './content/content';
+import Button from './components/Button';
+import Card from './components/Card';
 
 function App() {
 	return (
 		<div className='App'>
 			<div className='box-background'>
+				{/* Main Nav */}
 				<HeaderNav />
-				{/* Just placeholder component */}
-				<Hero headline='Free <em>your data</em>. Empower everyone.' copy='Ekai is an agentic AI platform making your organization’s data work easier for everyone—with value delivered faster. <br><br> Through our self-service platform, any business function can access and explore existing company analytical data independently. Your data is finally understandable, accessible, and actionable across your entire organization.' />
+				{/* Hero Component */}
+				<Hero headline={content.hero.headline} copy={content.hero.copy} steps={content.hero.steps} />
 
-				<section className='content inner-max-width'>
+				<section className='vertical-spacing inner-max-width center'>
 					<div className='copy-box inner-max-width-tight'>
-						<h2>
-							Your organization has <em>the data...</em>
-							<br />
-							but why is it so <em>difficult</em> to use?
-						</h2>
-						<p>
-							On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.
-						</p>
+						<h2 dangerouslySetInnerHTML={{ __html: content.organizationModule.headline }}></h2>
+						<p dangerouslySetInnerHTML={{ __html: content.organizationModule.copy }}></p>
 					</div>
-
 					<div className='cards'>
-						<div className='card'>
-							<h3>Business teams face constant barriers</h3>
-							<ul>
-								<li>Business users don’t have the skills to quickly test data-driven ideas</li>
-								<li>Accessing and exploring existing company data independently is difficult</li>
-								<li>Reports and dashboards are not flexible for fast self-service</li>
-							</ul>
-						</div>
-						<div className='card'>
-							<h3>IT teams are overwhelmed</h3>
-							<ul>
-								<li>Small IT teams are burdened with too many projects and limited capacity</li>
-								<li>Constant pressure to deliver quickly leads to long timelines or bloated headcount</li>
-								<li>Developing business unit use cases consumes time and slows infrastructure management</li>
-							</ul>
-						</div>
+						{content.organizationModule.cards.map((card, index) => (
+							<Card key={index}>
+								<h3>{card.title}</h3>
+								<ul>
+									{card.cardList.map((list, i) => (
+										<li key={i}>{list}</li>
+									))}
+								</ul>
+							</Card>
+						))}
 					</div>
-					<a href='#' className='btn btn-yellow'>
-						Book a demo
-					</a>
+					<Button href='#' text='Book a demo' btnStyle='btn-yellow'></Button>
 				</section>
-				<div className='box-background'>
+				<div className='box-background vertical-spacing'>
 					<SliderSection />
-					<section className='content inner-max-width center'>
+					<section className='inner-max-width center vertical-spacing'>
 						<div className='copy-box inner-max-width-tight'>
 							<h2>
 								Your organization has <em>the data...</em>
@@ -113,7 +103,7 @@ function App() {
 				<div className='content ek-for-everyone'>
 					<HoverAccordion />
 					<div className='inner-max-width-tight'>
-						<p class='larger-p margin-bottom-40'>
+						<p className='larger-p margin-bottom-40'>
 							On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.
 						</p>
 						<a href='#' className='btn btn-gradient'>
@@ -125,6 +115,8 @@ function App() {
 					<Team />
 				</section>
 				<HoverTimeline />
+			</div>
+			<div className='box-background full'>
 				<section className='content inner-max-width center'>
 					<div className='copy-box inner-max-width-tight'>
 						<h2>
@@ -133,9 +125,31 @@ function App() {
 						<img className='figure' src='/images/business-fig.png' />
 					</div>
 				</section>
+
 				<PricingTable />
+
+				<div className='content'>
+					<Faq />
+				</div>
 			</div>
-			<Faq />
+			<div className='box-background reverse'>
+				<div className='content'>
+					<div className=' copy-box copy-box-left  inner-max-width-tight'>
+						<div className='copy-box-inner'>
+							<h2>
+								Isn't it time to <em>liberate </em>
+								your data?
+							</h2>
+							<p>While you're stuck waiting on answers, decisions stall. Join enterprises who've cut their data project timelines from 3-6 months down to a few hours</p>
+						</div>
+
+						<a href='#' className='btn btn-gradient'>
+							Book a demo
+						</a>
+					</div>
+				</div>
+			</div>
+			<Footer />
 		</div>
 	);
 }
