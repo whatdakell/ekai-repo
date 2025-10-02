@@ -45,24 +45,13 @@ html {
 .border-card {
 	padding: 40px;
 	border-radius: 20px;
-	// width: 100%;
 }
-.box-background {
+.App {
 	background-image: url('/images/background.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-size: 1380px auto;
 	background-position: center top;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	&.reverse {
-		background-image: url('/images/background-reverse.png');
-	}
-	&.full {
-		background-image: url('/images/background-full.png');
-		background-position: center 300px;
-	}
+	background-attachment: fixed;
+	background-repeat: repeat-y;
+	background-size: cover;
 }
 
 .inner-max-width {
@@ -86,10 +75,6 @@ html {
 			width: 95%;
 		}
 	}
-}
-body {
-	max-width: 1440px;
-	margin: auto;
 }
 
 // Start of second section

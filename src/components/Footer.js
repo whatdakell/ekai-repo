@@ -4,7 +4,7 @@ import '../styles/components/_footer.scss';
 
 const Footer = () => {
 	return (
-		<footer className='footer'>
+		<footer className='footer vertical-spacing'>
 			<div className='footer-content'>
 				{/* Logo + Newsletter */}
 				<div className='footer-left'>
