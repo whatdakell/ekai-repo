@@ -25,31 +25,24 @@
 		margin-bottom: 0.5rem;
 		text-align: left;
 	}
-
-	p {
-		// color: #444;
-		// font-size: 0.95rem;
-	}
 }
-
-/* Progress bar */
+// progress bar
 .progress-bar {
 	height: 30px;
 	background: #f8e9c8;
 	border-radius: 8px;
 	margin: 1.5rem 0;
 	overflow: hidden;
+	.progress-fill {
+		height: 100%;
+		background: linear-gradient(90deg, #ffc107, #ff9800);
+		width: 0%;
+		border-radius: 8px;
+		transition: width 0.4s ease;
+	}
 }
 
-.progress-fill {
-	height: 100%;
-	background: linear-gradient(90deg, #ffc107, #ff9800);
-	width: 0%;
-	border-radius: 8px;
-	transition: width 0.4s ease;
-}
-
-/* Steps */
+// steps
 .timeline-steps {
 	display: flex;
 	flex-direction: column;
@@ -61,8 +54,6 @@
 		padding: 40px;
 		cursor: pointer;
 		transition: background 0.3s ease;
-		// border: 1px solid #f5d37f;
-
 		&-header {
 			display: flex;
 			justify-content: space-between;
@@ -80,8 +71,6 @@
 
 		&-content {
 			margin-top: 30px;
-			// font-size: 0.95rem;
-			// line-height: 1.4;
 			color: #131317;
 			opacity: 0;
 			animation: fadeIn 0.3s forwards;
