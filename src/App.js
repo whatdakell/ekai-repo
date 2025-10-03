@@ -26,46 +26,47 @@ function App() {
 			{/* Hero Component */}
 			<Hero headline={content.hero.headline} copy={content.hero.copy} steps={content.hero.steps} />
 
-			<section className='vertical-spacing inner-max-width center'>
-				<div className='copy-box inner-max-width-tight'>
-					<h2 dangerouslySetInnerHTML={{ __html: content.organizationModule.headline }}></h2>
-					<p dangerouslySetInnerHTML={{ __html: content.organizationModule.copy }}></p>
-				</div>
-				<div className='cards'>
-					{content.organizationModule.cards.map((card, index) => (
-						<Card key={index}>
-							<h3>{card.title}</h3>
-							<ul>
-								{card.cardList.map((list, i) => (
-									<li key={i}>{list}</li>
-								))}
-							</ul>
-						</Card>
-					))}
-				</div>
-				<Button href='#' text='Book a demo' btnStyle='btn-yellow'></Button>
+			<section className='inner-max-width center'>
+				<ViewportTrigger>
+					<div className='copy-box inner-max-width-tight'>
+						<h2 dangerouslySetInnerHTML={{ __html: content.organizationModule.headline }}></h2>
+						<p dangerouslySetInnerHTML={{ __html: content.organizationModule.copy }}></p>
+					</div>
+					<div className='cards'>
+						{content.organizationModule.cards.map((card, index) => (
+							<Card key={index}>
+								<h3>{card.title}</h3>
+
+								<ul>
+									<ViewportTrigger stagger>
+										{card.cardList.map((list, i) => (
+											<li key={i}>{list}</li>
+										))}
+									</ViewportTrigger>
+								</ul>
+							</Card>
+						))}
+					</div>
+					<Button href='#' text='Book a demo' btnStyle='btn-yellow'></Button>
+				</ViewportTrigger>
 			</section>
 
 			<SliderSection />
 
-			<section className='inner-max-width center vertical-spacing'>
-				<div className={`copy-box inner-max-width-tight`}>
-					<ViewportTrigger>
-						<h2>
-							Your organization has <em>the data...</em>
+			<ViewportTrigger>
+				<CopyMediaBlock
+					type='image'
+					heading='Your organization has <em>the data...</em>
 							<br />
-							but why is it so <em>difficult</em> to use?
-						</h2>
-						<img className='figure' src='/images/business-fig.png' />
-						<p className='larger-p'>
-							On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.
-						</p>
-					</ViewportTrigger>
-				</div>
-			</section>
+							but why is it so <em>difficult</em> to use?'
+					src='/images/business-fig.png'
+					alt='Organization graphic'
+					copy='On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.'
+				/>
+			</ViewportTrigger>
 
 			{/* Will make reusable */}
-			<section className='content inner-max-width vertical-spacing '>
+			<section className='content inner-max-width '>
 				<div className='copy-box inner-max-width-tight'>
 					<h2>
 						With Ekai, data projects can be measured <em>in hours</em>, not months
@@ -117,19 +118,9 @@ function App() {
 				</section>
 				<HoverTimeline />
 			</div>
-			<section className='content inner-max-width center'>
+			<ViewportTrigger>
 				<CopyMediaBlock type='video' src='/videos/Ekai-AI.mp4' poster='/images/thumbnail.png' />
-				{/* <CopyMediaBlock type='image' src='overview-image.jpg' alt='Overview graphic' /> */}
-				{/* <div className='copy-box inner-max-width-tight'>
-					<h2>
-						See how data <em>can</em> be this easy in this short overview
-					</h2>
-					<video width='320' height='240' controls>
-						<source src='/videos/Ekai-AI.mp4' type='video/mp4' />
-					</video>
-					{/* <img className='figure' src='/images/business-fig.png' /> */}
-				{/* </div>  */}
-			</section>
+			</ViewportTrigger>
 
 			<PricingTable />
 

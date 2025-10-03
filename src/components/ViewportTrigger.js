@@ -1,14 +1,12 @@
 import React from 'react';
 import { useInView } from '../hooks/useInView';
 
-const ViewportTrigger = ({ children, className = '' }) => {
-	const [ref, inView] = useInView();
+export default function ViewportTrigger({ children, stagger = false }) {
+	const [ref, inView] = useInView({ threshold: 0.2 });
 
 	return (
-		<div ref={ref} className={`fadeUp ${inView ? 'in-viewport' : ''} ${className}`}>
+		<div ref={ref} className={`${stagger ? 'stagger' : 'fade-in-up'} ${inView ? 'visible' : ''}`}>
 			{children}
 		</div>
 	);
-};
-
-export default ViewportTrigger;
+}

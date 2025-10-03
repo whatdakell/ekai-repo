@@ -5,15 +5,37 @@ import Button from './Button';
 function HeaderNav() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [animate, setAnimate] = useState(false);
+	const [showHeader, setShowHeader] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
 
+	// Initial mount animation
 	useEffect(() => {
-		// Trigger animation when header mounts
 		const timer = setTimeout(() => setAnimate(true), 400);
 		return () => clearTimeout(timer);
 	}, []);
 
+	// Scroll listener for hide/show
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY < 50) {
+				// Always show near top
+				setShowHeader(true);
+			} else if (window.scrollY > lastScrollY) {
+				// scrolling down
+				setShowHeader(false);
+			} else {
+				// scrolling up
+				setShowHeader(true);
+			}
+			setLastScrollY(window.scrollY);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, [lastScrollY]);
+
 	return (
-		<header className={`navbar ${animate ? 'animate' : ''}`}>
+		<header className={`navbar ${animate ? 'animate' : ''} ${showHeader ? 'visible' : 'hidden'}`}>
 			<div className='navbar-container'>
 				{/* Logo */}
 				<a className='logo' aria-label='ekai' href='/'>
@@ -34,7 +56,7 @@ function HeaderNav() {
 					<Button href='test' text='Book a demo' btnStyle='btn-gradient white' />
 				</nav>
 
-				{/* Hamburger Icon */}
+				{/* Hamburger */}
 				<div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
 					<span></span>
 					<span></span>

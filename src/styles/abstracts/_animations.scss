@@ -4,17 +4,46 @@ $introDuration: 1s;
 $introPageShift: 1.3s;
 $introTotalTime: $introDelay + $introDuration;
 
-.fadeUp {
+// .fadeUp {
+// 	opacity: 0;
+// 	transform: translateY(30px);
+// 	transition: all 1s ease;
+
+// 	.in-viewport & {
+// 		opacity: 1;
+// 		transform: translateY(0);
+// 	}
+// }
+
+.fade-in-up {
 	opacity: 0;
 	transform: translateY(30px);
-	transition: all 0.6s ease-out;
+	transition: all 1s ease;
 
-	&.in-viewport {
+	&.visible {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
 
+.stagger {
+	& > * {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 0.6s ease, transform 0.6s ease;
+
+		// Stagger children
+		@for $i from 1 through 10 {
+			&:nth-child(#{$i}) {
+				transition-delay: #{$i * 0.15}s;
+			}
+		}
+	}
+	&.visible > * {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 .moveUp {
 	// transform: translateY(40%);
 	opacity: 0;

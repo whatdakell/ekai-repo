@@ -20,7 +20,8 @@ function Hero({ headline, copy, steps }) {
 			</div>
 			{/* <Steps steps={steps}></Steps> */}
 			<div className='steps-container'>
-				<div className={`line ${animate ? 'draw' : ''}`}></div>
+				<div className={`line ${animate ? 'draw' : ''} desktop`}></div>
+				<div className={`line ${animate ? 'draw' : ''} mobile`}></div>
 				<ul className='steps'>
 					{steps.map((step, index) => {
 						return (

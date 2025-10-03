@@ -26,6 +26,7 @@ const steps = [
 
 function Slider() {
 	const [current, setCurrent] = useState(0); // start at first REAL slide
+	const maxScroll = 2.5;
 	// const [transitioning, setTransitioning] = useState(true);
 	// const trackRef = useRef(null);
 
@@ -50,7 +51,9 @@ function Slider() {
 	};
 
 	const nextSlide = () => {
-		if (current < steps.length - 1) setCurrent(current + 1);
+		if (current < maxScroll) {
+			setCurrent(current + 1);
+		}
 	};
 
 	// const handleTransitionEnd = () => {
@@ -101,7 +104,7 @@ function Slider() {
 				<button className='nav-btn left' disabled={current === 0} onClick={prevSlide}>
 					&#8249;
 				</button>
-				<button className='nav-btn right' disabled={current === steps.length - 1} onClick={nextSlide}>
+				<button className='nav-btn right' disabled={current >= maxScroll} onClick={nextSlide}>
 					&#8250;
 				</button>
 			</div>

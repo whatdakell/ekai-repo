@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import '../styles/components/_CopyMediaBlock.scss';
-export default function CopyMediaBlock({ type = 'video', src, poster, alt }) {
+export default function CopyMediaBlock({ type = 'video', src, poster, alt, heading, copy }) {
 	const mediaRef = useRef(null);
 	const containerRef = useRef(null);
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -36,7 +36,7 @@ export default function CopyMediaBlock({ type = 'video', src, poster, alt }) {
 
 	// Scroll observer for zoom animation
 	useEffect(() => {
-		const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.3 });
+		const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.5 });
 
 		if (containerRef.current) observer.observe(containerRef.current);
 		return () => {
@@ -45,11 +45,8 @@ export default function CopyMediaBlock({ type = 'video', src, poster, alt }) {
 	}, []);
 
 	return (
-		<section className='media-section' ref={containerRef}>
-			<h2 className='media-title'>
-				See how data <em>can</em> be this easy <br />
-				in this short overview
-			</h2>
+		<section className='media-section inner-max-width-tight content' ref={containerRef}>
+			<h2 className='media-title' dangerouslySetInnerHTML={{ __html: heading }}></h2>
 
 			<div className={`media-wrapper ${isVisible ? 'zoomed' : ''}`}>
 				{type === 'video' ? (
@@ -72,6 +69,7 @@ export default function CopyMediaBlock({ type = 'video', src, poster, alt }) {
 					<img src={src} alt={alt || 'Media preview'} className='media-element' />
 				)}
 			</div>
+			{copy && <p className='larger-p' dangerouslySetInnerHTML={{ __html: copy }}></p>}
 		</section>
 	);
 }

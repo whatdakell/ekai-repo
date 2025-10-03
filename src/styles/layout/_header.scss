@@ -133,3 +133,23 @@
 		}
 	}
 }
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background: white; // adjust to your design
+	transition: transform 0.35s ease, opacity 0.35s ease;
+
+	&.hidden {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	&.visible {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
