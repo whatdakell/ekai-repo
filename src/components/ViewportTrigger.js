@@ -1,8 +1,8 @@
 import React, { Children, cloneElement, isValidElement } from 'react';
 import { useInView } from '../hooks/useInView';
 
-export default function ViewportTrigger({ children, stagger = false, threshold = 0.2, staggerDelay = 80, parentClass = 'stagger' }) {
-	const [ref, inView] = useInView({ threshold });
+export default function ViewportTrigger({ children, stagger = false, threshold = 0.2, once = false, onlyScrollDown = false, parentClass = 'stagger' }) {
+	const [ref, inView] = useInView({ threshold, once, onlyScrollDown });
 
 	// CASE 1: stagger = true → enhance children + add parent class
 	if (stagger) {

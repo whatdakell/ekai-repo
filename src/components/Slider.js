@@ -92,14 +92,14 @@ function Slider() {
 					// }}
 					// onTransitionEnd={handleTransitionEnd}
 				>
-					<ViewportTrigger stagger>
-						{steps.map((step, index) => (
+					{steps.map((step, index) => (
+						<ViewportTrigger once stagger>
 							<div key={index} className='slide'>
 								<h3>{step.title}</h3>
 								<p>{step.text}</p>
 							</div>
-						))}
-					</ViewportTrigger>
+						</ViewportTrigger>
+					))}
 				</div>
 			</div>
 			<div className='nav-btns'>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 export function useInView(options = {}) {
+	const { once = false, threshold = 0.3, ...rest } = options;
 	const ref = useRef(null);
 	const [inView, setInView] = useState(false);
 
@@ -9,11 +10,15 @@ export function useInView(options = {}) {
 			([entry]) => {
 				if (entry.isIntersecting) {
 					setInView(true);
-				} else {
+					if (once && ref.current) {
+						// stop observing after first intersection
+						observer.unobserve(ref.current);
+					}
+				} else if (!once) {
 					setInView(false);
 				}
 			},
-			{ threshold: 0.3, ...options } // 20% visible by default
+			{ threshold, ...rest }
 		);
 
 		if (ref.current) observer.observe(ref.current);
@@ -21,7 +26,7 @@ export function useInView(options = {}) {
 		return () => {
 			if (ref.current) observer.unobserve(ref.current);
 		};
-	}, [options]);
+	}, [once, threshold, rest]);
 
 	return [ref, inView];
 }

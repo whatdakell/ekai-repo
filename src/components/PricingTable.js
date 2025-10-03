@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/components/_pricingTimeline.scss';
+import ViewportTrigger from './ViewportTrigger';
 
 const plans = [
 	{
@@ -38,30 +39,32 @@ export default function PricingTable() {
 
 			<div className='pricing-grid'>
 				{plans.map((plan, index) => (
-					<div key={index} className='pricing-card'>
-						<h3>{plan.name}</h3>
-						<div className='top-price border-card'>
-							<p className='price t30-text'>{plan.price}</p>
-							<ul className='description'>
-								{plan.description.map((item, i) => (
-									<li key={i}>
-										<p>{item}</p>
-									</li>
-								))}
-							</ul>
-						</div>
+					<ViewportTrigger stagger>
+						<div key={index} className='pricing-card'>
+							<h3>{plan.name}</h3>
+							<div className='top-price border-card'>
+								<p className='price t30-text'>{plan.price}</p>
+								<ul className='description'>
+									{plan.description.map((item, i) => (
+										<li key={i}>
+											<p>{item}</p>
+										</li>
+									))}
+								</ul>
+							</div>
 
-						<div className='sub-card'>
-							<h4 className='t30-text border-wrapper'>{plan.subPlan.title}</h4>
-							<ul>
-								{plan.subPlan.features.map((feature, i) => (
-									<li className='list-items' key={i}>
-										<p>{feature}</p>
-									</li>
-								))}
-							</ul>
+							<div className='sub-card'>
+								<h4 className='t30-text border-wrapper'>{plan.subPlan.title}</h4>
+								<ul>
+									{plan.subPlan.features.map((feature, i) => (
+										<li className='list-items' key={i}>
+											<p>{feature}</p>
+										</li>
+									))}
+								</ul>
+							</div>
 						</div>
-					</div>
+					</ViewportTrigger>
 				))}
 			</div>
 

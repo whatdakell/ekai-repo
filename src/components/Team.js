@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/components/_team.scss';
-// import './styles/main.scss';
-// import Slider from './Slider';
+
+import ViewportTrigger from './ViewportTrigger';
 
 const team = [
 	{
@@ -39,20 +39,23 @@ export default function Team() {
 			<h2>
 				Meet the team making your data work for <em>everyone.</em>
 			</h2>
+
 			<div className='team-grid'>
 				{team.map((member, index) => {
 					const isExpanded = expandedIndex === index;
 					return (
-						<div key={index} className={`team-card ${isExpanded ? 'expanded' : ''}`}>
-							<h3>{member.name}</h3>
-							<p className='title center' dangerouslySetInnerHTML={{ __html: member.title }}></p>
-							<img src={member.image} alt={member.name} />
+						<ViewportTrigger stagger>
+							<div key={index} className={`team-card ${isExpanded ? 'expanded' : ''}`}>
+								<h3>{member.name}</h3>
+								<p className='title center' dangerouslySetInnerHTML={{ __html: member.title }}></p>
+								<img src={member.image} alt={member.name} />
 
-							<p className='bio'>{isExpanded ? member.fullBio : member.shortBio}</p>
-							<button className='read-more' onClick={() => toggleExpand(index)}>
-								{isExpanded ? 'Read less ^' : 'Read more v'}
-							</button>
-						</div>
+								<p className='bio'>{isExpanded ? member.fullBio : member.shortBio}</p>
+								<button className='read-more' onClick={() => toggleExpand(index)}>
+									{isExpanded ? 'Read less ^' : 'Read more v'}
+								</button>
+							</div>
+						</ViewportTrigger>
 					);
 				})}
 			</div>
