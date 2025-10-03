@@ -24,12 +24,10 @@ function Slider({ slides }) {
 					}}
 				>
 					{slides.map((step, index) => (
-						<ViewportTrigger once stagger key={index}>
-							<div className='slide'>
-								<h3>{step.title}</h3>
-								<p dangerouslySetInnerHTML={{ __html: step.text }}></p>
-							</div>
-						</ViewportTrigger>
+						<div className='slide'>
+							<h3>{step.title}</h3>
+							<p dangerouslySetInnerHTML={{ __html: step.text }}></p>
+						</div>
 					))}
 				</div>
 			</div>

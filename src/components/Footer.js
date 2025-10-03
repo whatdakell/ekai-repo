@@ -26,7 +26,7 @@ const Footer = () => {
 
 				{/* Right side icons */}
 				<div className='footer-right'>
-					<a href='https://linkedin.com/company/ekai' target='_blank' rel='noopener noreferrer' className='linkedin'>
+					<a href='https://www.linkedin.com/company/ekaiai/' target='_blank' rel='noopener noreferrer' className='linkedin'>
 						<img src='/images/linkedin.svg' alt='LinkedIn' />
 					</a>
 					<div className='footer-bottom'>

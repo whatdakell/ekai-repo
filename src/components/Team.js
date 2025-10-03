@@ -46,8 +46,8 @@ export default function Team({ data: { heading, team } }) {
 								<h3>{member.name}</h3>
 								<p className='title center' dangerouslySetInnerHTML={{ __html: member.title }}></p>
 								<img src={member.image} alt={member.name} />
-
-								<p className='bio'>{isExpanded ? member.fullBio : member.shortBio}</p>
+								<p className='bio'>{member.shortBio}</p>
+								{isExpanded && <p className='bio'>{member.fullBio}</p>}
 								<button className='read-more' onClick={() => toggleExpand(index)}>
 									{isExpanded ? 'Read less ^' : 'Read more v'}
 								</button>

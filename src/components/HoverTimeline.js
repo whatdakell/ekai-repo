@@ -17,7 +17,7 @@ export default function HoverTimeline({ data: { heading, copy, steps } }) {
 		<div className='how-section inner-max-width-tight'>
 			<div className='how-header'>
 				<h2>{heading}</h2>
-				<p>{copy}</p>
+				<p dangerouslySetInnerHTML={{ __html: copy }}></p>
 			</div>
 
 			{/* progress bar */}
@@ -40,7 +40,7 @@ export default function HoverTimeline({ data: { heading, copy, steps } }) {
 						</div>
 						{active === index && (
 							<div className={`timeline-step-content ${current === index ? 'show' : ''}`}>
-								<p>{step.desc}</p>
+								<p dangerouslySetInnerHTML={{ __html: step.desc }}></p>
 							</div>
 						)}
 					</div>

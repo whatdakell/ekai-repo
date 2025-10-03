@@ -2,6 +2,14 @@
 * @desc         adds default text styles
 * @requires     variables.scss
 */
+
+@font-face {
+	font-family: 'InterDisplay'; /* Choose a name for your font */
+	src: local('InterDisplay-Regular'), url('../../fonts/InterDisplay-Regular.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	line-height: $base-line-height;
 	color: $text-default-color;
@@ -83,6 +91,7 @@ h3 {
 // }
 
 p {
+	font-family: $font-family-code;
 	font-size: toRem(18);
 	color: $gray-color-3;
 	// font-size: 18px;
@@ -96,6 +105,7 @@ p {
 	// color: #131317;
 }
 .larger-p {
+	font-family: $font-family-code;
 	font-size: toRem(24);
 	font-weight: normal;
 	font-stretch: normal;

@@ -40,7 +40,7 @@ export default function PricingTable({ data: { heading, plans, footnote } }) {
 				))}
 			</div>
 
-			<p className='note center'>{footnote}</p>
+			<p className='note center' dangerouslySetInnerHTML={{ __html: footnote }}></p>
 		</div>
 	);
 }

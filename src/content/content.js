@@ -29,11 +29,11 @@ export const content = {
 		cards: [
 			{
 				title: 'Business teams face constant barriers',
-				cardList: ['Business users don’t have the skills to quickly test data-driven ideas', 'Accessing and exploring existing company data independently is difficult', 'Reports and dashboards are not flexible for fast self-service'],
+				cardList: ['Business users don’t have the skills to quickly test data-driven ideas', 'Accessing and exploring existing company data independently is difficult', 'Current standard reports and dashboards are not flexible enough for fast, accurate real time self-service'],
 			},
 			{
 				title: 'IT teams are overwhelmed',
-				cardList: ['Small IT teams are burdened with too many projects and limited capacity', 'Constant pressure to deliver quickly leads to long timelines or bloated headcount', 'Developing business unit use cases consumes time and slows infrastructure management'],
+				cardList: ['Small IT teams are burdened with too many projects and limited capacity to support business needs', 'Constant pressure to deliver quickly means either long timelines to deliver or a bloated headcount', 'Developing individual use cases for business units consumes so much time that’s at odds with managing and maintaining the data platform and infrastructure'],
 			},
 		],
 	},
@@ -64,8 +64,8 @@ export const content = {
 		],
 	},
 	orgData: {
-		heading: 'Your organization has <em>the data...</em><br />but why is it so <em>difficult</em> to use?',
-		copy: 'On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.',
+		heading: '  Works with everything you <em>already</em> have',
+		copy: 'Connect once to Ekai and automatically integrate with your entire stack. That includes data platforms, catalogs, observability tools, and repositories with no need to rip and replace.',
 		src: '/images/business-fig.png',
 		alt: 'Organization graphic',
 		type: 'image',
@@ -96,14 +96,14 @@ export const content = {
 		imgSrc: '/images/ai-community.png',
 	},
 	accordion: {
-		heading: 'Ekai is for everyone',
+		heading: 'Your data platforms, ready for any situation',
 		tableHeader: ['Role/Function', 'Challenge', 'With Ekai'],
 		footnote: 'These are just a few examples. Everyone that has a question and access to ekai can connect the dots.',
 		roles: [
 			{
 				role: 'Sales',
-				challenge: 'No real-time campaign visibility, manual analysis delays optimization decisions.',
-				withEkai: 'With an AI-assisted analytics workspace, marketing won’t be stuck with reporting vanity metrics when they want to be improving conversation rates.',
+				challenge: 'Chasing low-quality leads, poor conversion rates, missing quota targets.',
+				withEkai: 'Real-time lead scoring and insights means your sales teams can reduce sales cycles, boost their close rate, and hit that quota.',
 			},
 			{
 				role: 'Marketing',
@@ -112,32 +112,44 @@ export const content = {
 			},
 			{
 				role: 'Finance',
-				challenge: 'No real-time campaign visibility, manual analysis delays optimization decisions.',
-				withEkai: 'With an AI-assisted analytics workspace, marketing won’t be stuck with reporting vanity metrics when they want to be improving conversation rates.',
+				challenge: 'Fragmented data systems and inconsistent KPIs across departments. Team silo and lack of trust in data.',
+				withEkai: 'Automated financial reporting and budget tracking can help lower month-end cycles and provide better oversight to reduce budget overruns.',
 			},
 			{
 				role: 'Head of Analytics',
-				challenge: 'No real-time campaign visibility, manual analysis delays optimization decisions.',
-				withEkai: 'With an AI-assisted analytics workspace, marketing won’t be stuck with reporting vanity metrics when they want to be improving conversation rates.',
+				challenge: 'Fragmented data systems and inconsistent KPIs across departments. Team silo and lack of trust in data.',
+				withEkai: 'Unify analytics across the organization with standardized semantic models and AI assisted self-service tools. Immediately improve data accessibility and literacy.',
 			},
 			{
 				role: 'Data Engineer',
-				challenge: 'No real-time campaign visibility, manual analysis delays optimization decisions.',
-				withEkai: 'With an AI-assisted analytics workspace, marketing won’t be stuck with reporting vanity metrics when they want to be improving conversation rates.',
+				challenge: 'Firefighting broken data pipes and fielding urgent data requests.',
+				withEkai: 'Rapidly build logical data models and automate data flows with built-in validation. Self Service capability reduces dependency on data engineering teams.',
 			},
 		],
 	},
 	hoverTimeline: {
 		heading: 'How it works',
-		copy: 'Our platform understands your data and builds a logical model as the foundation for your analytics. Guided by our AI assistant, your team can easily create semantic models tailored to your business use cases—making getting the answers you need both easy and actionable. Our autonomous AI agents are designed to handle each step with a few questions from you.',
+		copy: 'Our platform understands your data and builds a logical model as the foundation for your analytics.<br><br>Guided by our AI assistant, your team can easily create semantic models tailored to your business use cases—making getting the answers you need both easy and actionable.<br><br>Our autonomous AI agents are designed to handle each step with a few questions from you.',
 		steps: [
-			{ id: 1, title: 'Connect', desc: 'Connect your data sources and instantly start building logical models.' },
-			{ id: 2, title: 'Model', desc: 'Use our AI assistant to model your business context with ease.' },
-			{ id: 3, title: 'Discover', desc: 'Explore your data semantically and find insights faster.' },
-			{ id: 4, title: 'Contextualize', desc: 'Our Modelling AI agent validates with you on your key business context before finalizing them. Multi-agent technology retains context memory, building and updating documentation for physical, logical, and semantic data.' },
-			{ id: 5, title: 'Generate', desc: 'Automatically generate code packages and queries tailored to your analytics stack.' },
-			{ id: 6, title: 'Publish', desc: 'Publish to your team’s preferred platforms and keep documentation updated.' },
-			{ id: 7, title: 'Insights', desc: 'Self-service analytics with clear insights accessible across your organization.' },
+			{ id: 1, title: 'Connect', desc: 'Ekai connects with your data platforms and metadata and gets the foundation ready for your analytical use case. The only requirement at this step is providing access to your raw data storage in your data platform.' },
+			{ id: 2, title: 'Model', desc: 'Our <i>Modelling AI agent</i> takes a look at your data, applies its prior knowledge on similar data, and generates a logical model based on the data profiling and received user input.<br><br>This logical model will reflect how your data is connected as well as provides the foundation to start creating semantic models for your analytical use case.' },
+			{ id: 3, title: 'Discover', desc: 'Our <i>Discovery AI agent</i> asks a few questions and captures the relevant business requirements for the analytical use case you’re working on. <br><br>When the AI agent has gathered enough information, it will automatically generate the business requirement document which you can review and modify by talking to our AI agent.' },
+			{
+				id: 4,
+				title: 'Contextualize',
+				desc: 'Our <i>Modelling AI agent</i> automatically proposes key business context for validation by the user before finalizing them. <br><br>Our multi-agent technology retains context memory, allowing Ekai to perform better than stateless AI models.<br><br>At the same time, our platform builds and updates documentation for physical, logical, and semantic data. Agentic data systems are worthless without enterprise business context—Ekai builds that context for you.',
+			},
+			{ id: 5, title: 'Generate', desc: 'Our <i>Workflow AI agent</i> creates a full documentation package with logical data models and data concepts.<br><br>This includes analytical use case code and test cases, data quality checks, required measurements in detail,, data lineage, and relevant data catalog documentation. <br><br>At this stage, you have an instantly deployable package for your analytical use case.' },
+			{
+				id: 6,
+				title: 'Publish',
+				desc: 'Ekai provides several options for <i>publishing or running</i> the package.<br><br>1) You can just simply take the whole documentation package as single compressed folder or .zip file and continue with your IT reviews.<br>2) Automate content into relevant systems like data catalog or your code repository for further processing.<br>3) Ekai also provides possibility to run the code package within your data platform to get immediate insights on your data. To run the semantic models and the code in your data platform, we require permission from your IT admin.',
+			},
+			{
+				id: 7,
+				title: 'Insights',
+				desc: 'When code has been run in your data platform, our <i>Reporting AI agent</i> generates insights and reports according to your business requirements and metrics.<br><br>With these insights, the user can ask relevant more detailed questions from our AI agent. Your analytical use case is immediately available for consumption.',
+			},
 		],
 	},
 	teamSection: {
@@ -147,23 +159,22 @@ export const content = {
 				name: 'Mo Aidrus',
 				title: 'Co-founder <br>& Chief Executive Officer',
 				image: '/images/mo.jpg',
-				shortBio: 'As a x2 founder, and a long-time advocate for freeing trapped data value inside the enterprise, Mo spent 20+ years as Managing Director at Accenture & Rayn before setting out to build Ekai.',
-				fullBio: 'As a x2 founder, and a long-time advocate for freeing trapped data value inside the enterprise, Mo spent 20+ years as Managing Director at Accenture & Rayn before setting out to build Ekai. With deep experience in enterprise strategy and execution, Mo continues to lead Ekai’s mission to simplify analytics for all.',
+				shortBio: 'As a x2 founder, and a  long-time advocate for freeing trapped data value inside the enterprise, Mo spent 20+ years as Managing Director at Accenture & Rayn before setting out to build Ekai. ',
+				fullBio: 'His goal was to fix three problems: the difficulty in accessing and exploring existing company data independently, not knowing the right numbers at the right time, and not being able to take full charge of data. Together with Hussnain, Ekai is meant to be the ultimate data companion for the business users to quickly test data-driven ideas without relying on busy IT teams. ',
 			},
 			{
 				name: 'Hussnain Ahmed',
 				title: 'Co-founder <br>& Chief AI Officer',
 				image: '/images/hussnain.jpg',
 				shortBio: 'Hussnain puts the AI in Ekai. He brings 20+ years of experience architecting innovative data strategy by introducing AI operations to tech teams.',
-				fullBio: 'Hussnain puts the AI in Ekai. He brings 20+ years of experience architecting innovative data strategy by introducing AI operations to tech teams. Previously, he held senior leadership roles at IBM and Accenture, where he led enterprise-wide AI and automation initiatives.',
+				fullBio: 'At Ekai, he has been pivotal in developing and cementing the AI-first principles that position Ekai as a “Business Data Lab” for BA’s or Analytic Engineers to build various data models without extensive IT involvement. ',
 			},
 			{
 				name: 'Tero Miikki',
 				title: 'Chief Commercial Officer <br>& Global Partnership Lead',
 				image: '/images/tero.png',
-				shortBio: 'Tero is a seasoned data leader and entrepreneur. As a CDO and data leader he has led major data/AI transformation and governance programs at UPM, a global manufacturing company & advanced engineering practices at Microsoft.',
-				fullBio:
-					'Tero is a seasoned data leader and entrepreneur. As a CDO and data leader he has led major data/AI transformation and governance programs at UPM, a global manufacturing company & advanced engineering practices at Microsoft. Tero has also shaped data strategy at Sanoma Media Finland. With expertise in business development, go-to-market data cloud strategies, and IT procurement, Tero has served management teams, chaired governance boards, and overseen complex data ecosystems. In addition to his CCO role, Tero currently leads Ekai’s global GTM efforts including its partnership with Snowflake.',
+				shortBio: 'Tero is a seasoned data leader and entrepreneur. As a CDO and data leader he has led major data/AI transformation and governance programs at UPM, a global manufacturing company and  advanced engineering practices at Microsoft.',
+				fullBio: 'Tero has also shaped data strategy at Sanoma Media Finland. With expertise in business development, go-to-market data cloud strategies, and IT procurement, Tero has served management teams, chaired governance boards, and overseen complex data ecosystems. In addition to his CCO role, Tero currently leads Ekai’s global GTM efforts including its partnership with Snowflake.',
 			},
 		],
 	},
@@ -175,7 +186,7 @@ export const content = {
 	},
 	pricingTable: {
 		heading: 'ekai - Business Data Lab pricing',
-		footnote: 'Ekai also offers add-on pricing, volume, and payment discounts. Contact one of our team to learn more.',
+		footnote: 'Ekai also offers add-on pricing, volume, and payment discounts. <a href="#contact">Contact our team to learn more</a>.',
 		plans: [
 			{
 				name: 'Trial',
@@ -211,7 +222,7 @@ export const content = {
 		faqs: [
 			{
 				question: 'What does Ekai do?',
-				answer: 'Ekai helps you connect your data platforms, model logical and semantic data, and provide analytics-ready insights so business users can self-serve answers.',
+				answer: 'Business teams wait weeks for simple data answers because IT can only handle so much at once. Accessing and exploring existing company data independently is difficult. Ekai breaks this bottleneck by automatically transforming your technical databases into a self-service intelligence layer that everyone can use. Finally self-service yourself and build various data models without extensive IT involvement.',
 			},
 			{
 				question: 'Who is Ekai for?',
@@ -219,19 +230,21 @@ export const content = {
 			},
 			{
 				question: 'How can Ekai help me or my team?',
-				answer: 'Ekai enables business teams to operate independently while IT retains control and oversight, cutting project delivery from months to hours.',
+				answer:
+					"Remember that report you needed last month? And you’re still waiting on? Ekai is for literally everyone in the business. Ekai has worked for Data Engineers, Business Analysts, Analytic Engineers, Marketing Managers, Sales Leads, Head of Analytics, HR leaders…and the list only continues to grow.<br><br>With Ekai, as a self-service platform, you'd have gotten it that same day. We handle all the technical complexity so you can query data directly, get answers immediately, and make decisions while opportunities are still relevant.",
 			},
 			{
 				question: 'Will my enterprise data remain safe with Ekai?',
-				answer: 'Yes. All data transformations run inside your environment, ensuring data security and governance compliance.',
+				answer: 'Yes. Your data never leaves your environment and works within your existing security framework. No copies or third-party sharing involved.<br><br>Data and IT security are core to Ekai’s metadata-driven code generation and analytics, which runs directly on your infrastructure without copying data. Users can work within the platform without worrying about compliance or security risks. ',
 			},
 			{
 				question: 'What data sources does Ekai support?',
-				answer: 'Ekai integrates with popular data platforms, catalogs, observability tools, and repositories—without needing to replace existing tools.',
+				answer: 'Ekai currently supports both structured and unstructured data sources including (but not limited to) Postgres, Athena, MYSQL, Clickhouse, MSSQL PDFs, excel, presentations, text documents, neo4j, and more. <br><br>Our list of out-of-the-box support is always updating and we also offer custom integrations based on your specific needs. You can always reach out to our team to discuss options tailored to your organization’s needs.',
 			},
 			{
 				question: 'How long does it take to implement Ekai?',
-				answer: 'Ekai can be set up within hours, not months, thanks to its automated data modeling and AI-assisted workflow.',
+				answer:
+					"The implementation timeline for Ekai largely depends on the data maturity and documentation quality of your organization. If your data is already modelled, the timeline is less than a day. For custom integrations or handling unstructured data, the process may take longer. In these cases, our team will work with you to provide additional hands-on support to get you started as quickly as possible.<br><br>From the very first step of our journey together, our goal is to build your trust and confidence in our platform. During onboarding, you'll have the opportunity to interact with our lead developers and get hands-on experience with the platform. We’re truly excited to invite you on this data journey and hope it will be a smooth and rewarding experience with us.",
 			},
 		],
 	},

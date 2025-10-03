@@ -46,7 +46,7 @@ function App() {
 							</Card>
 						))}
 					</div>
-					<Button href='#contact' text='Book a demo' btnStyle='btn-yellow'></Button>
+					<Button href='#contact' text='Book a demo' btnStyle='btn-gradient'></Button>
 				</ViewportTrigger>
 			</section>
 

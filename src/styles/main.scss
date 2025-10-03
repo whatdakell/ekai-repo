@@ -235,7 +235,22 @@ html {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-
+	.slide {
+		> * {
+			@include staggerAnimation(2, 150, 250);
+			opacity: 0;
+			transform: translateY(20px);
+			transition: opacity 0.6s ease, transform 0.6s ease;
+		}
+	}
+	.visible & {
+		.slide {
+			> * {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
 	.nav-btns {
 		position: absolute;
 		top: 50%;
