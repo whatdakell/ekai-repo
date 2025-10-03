@@ -46,6 +46,11 @@
 	.pricing-card {
 		position: relative;
 		overflow: hidden;
+		transform: scale(1);
+		transition: all 0.3s ease;
+		&:hover {
+			transform: scale(1.1);
+		}
 		&::before {
 			content: '';
 			position: absolute;

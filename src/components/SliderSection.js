@@ -11,7 +11,7 @@ function SliderSection({ content }) {
 				<div className='copy-box  copy-box-left inner-max-width'>
 					<h2 dangerouslySetInnerHTML={{ __html: content.headline }}></h2>
 					<div className='copy-box-p'>
-						<p dangerouslySetInnerHTML={{ __html: content.headline }}></p>
+						<p dangerouslySetInnerHTML={{ __html: content.copy }}></p>
 					</div>
 				</div>
 

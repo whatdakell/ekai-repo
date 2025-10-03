@@ -39,12 +39,10 @@ function HoverAccordion({ data: { heading, tableHeader, roles } }) {
 								</span>
 							</div>
 
-							{activeIndex === index && (
-								<div className='accordion-content'>
-									<p>{item.challenge}</p>
-									<p>{item.withEkai}</p>
-								</div>
-							)}
+							<div className='accordion-content'>
+								<p>{item.challenge}</p>
+								<p>{item.withEkai}</p>
+							</div>
 						</div>
 					))}
 				</div>

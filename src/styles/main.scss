@@ -98,8 +98,11 @@ html {
 		display: flex;
 		text-align: center;
 		flex-direction: column;
-		max-width: 400px;
-		width: auto;
+
+		img {
+			max-width: 430px;
+			width: auto;
+		}
 	}
 	&-left {
 		text-align: left;
@@ -124,9 +127,10 @@ html {
 		h2 {
 			text-align: left;
 			padding-right: 10px;
+			width: 70%;
 		}
 		p {
-			width: 438px;
+			max-width: 438px;
 			text-align: left;
 		}
 	}
