@@ -60,86 +60,63 @@ function App() {
 			<ViewportTrigger>
 				<section className='content inner-max-width '>
 					<div className='copy-box inner-max-width-tight'>
-						<h2>
-							With Ekai, data projects can be measured <em>in hours</em>, not months
-						</h2>
+						<h2 dangerouslySetInnerHTML={{ __html: content.dataProject.heading }}></h2>
 					</div>
 					<ViewportTrigger stagger>
 						<div className='cards two-grid'>
-							<div className='card'>
-								<h3>11X faster data project execution</h3>
-								<p>Ekai has helped companies complete data projects that would have taken months in mere hours. Our platform removes delays and makes analytical use cases available almost immediately.</p>
-							</div>
-							<div className='card'>
-								<h3>Self-service operation with no more waiting for answers</h3>
-								<p>Our AI-assisted workflow means business teams can work independently without worrying about breaking things. Plus, our automated IT processes ensure everything is always kept up to date.</p>
-							</div>
-							<div className='card'>
-								<h3>Enterprise-grade security and governance</h3>
-								<p>All transformation and analytics code executes within your environment and data never leaves your infrastructure. IT maintains full control with automated documentation, ensuring compliance and governance at scale.</p>
-							</div>
-							<div className='card'>
-								<h3>Significant cost savings over time</h3>
-								<p>Business teams reduce analytical development costs by 70-80% while making your data available to everyone. This time and cost savings can be redistributed to other crucial projects.</p>
-							</div>
+							{content.dataProject.cards.map((card, index) => (
+								<div className='card' index={index}>
+									<h3>{card.title}</h3>
+									<p>{card.copy}</p>
+								</div>
+							))}
 						</div>
 					</ViewportTrigger>
-					<a href='#' className='btn btn-gradient'>
-						Book a demo
-					</a>
+					<Button href='#' text='Book a demo' btnStyle='btn-gradient'></Button>
 				</section>
 			</ViewportTrigger>
 			<ViewportTrigger stagger>
 				<div className='copy-box copy-box-left inner-max-width vertical-spacing'>
-					<h2>Backed by proud partners within the data and AI community</h2>
+					<h2>{content.backedByAI.heading}</h2>
 					<div className='copy-box-p'>
-						<img src='/images/ai-community.png' />
+						<img src={content.backedByAI.imgSrc} />
 					</div>
 				</div>
 			</ViewportTrigger>
 			<ViewportTrigger>
 				<div className='content ek-for-everyone'>
-					<HoverAccordion />
+					<HoverAccordion data={content.accordion} />
 					<div className='inner-max-width-tight'>
-						<p className='larger-p margin-bottom-40'>
-							On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.
-						</p>
-						<a href='#' className='btn btn-gradient'>
-							Book a demo
-						</a>
+						<p className='larger-p margin-bottom-40'>{content.accordion.footnote}</p>
+						<Button href='#' text='Book a demo' btnStyle='btn-gradient'></Button>
 					</div>
 				</div>
 			</ViewportTrigger>
 			<ViewportTrigger>
 				<section className='content inner-max-width center'>
-					<Team />
+					<Team data={content.teamSection} />
 				</section>
 			</ViewportTrigger>
-			<HoverTimeline />
+			<HoverTimeline data={content.hoverTimeline} />
 
 			<ViewportTrigger>
-				<CopyMediaBlock type='video' src='/videos/Ekai-AI.mp4' poster='/images/thumbnail.png' />
+				<CopyMediaBlock data={content.videoBlock} />
 			</ViewportTrigger>
 			<ViewportTrigger>
-				<PricingTable />
+				<PricingTable data={content.pricingTable} />
 			</ViewportTrigger>
 
 			<div className='content'>
-				<Faq />
+				<Faq data={content.faq} />
 			</div>
 			<ViewportTrigger>
 				<div className='content'>
 					<div className=' copy-box copy-box-left  inner-max-width-tight'>
 						<div className='copy-box-inner'>
-							<h2>
-								Isn't it time to <em>liberate </em>
-								your data?
-							</h2>
-							<p>While you're stuck waiting on answers, decisions stall. Join enterprises who've cut their data project timelines from 3-6 months down to a few hours</p>
+							<h2 dangerouslySetInnerHTML={{ __html: content.liberateData.heading }}></h2>
+							<p>{content.liberateData.copy}</p>
 						</div>
-						<a href='#' className='btn btn-gradient'>
-							Book a demo
-						</a>
+						<Button href='#' text='Book a demo' btnStyle='btn-gradient'></Button>
 					</div>
 				</div>
 			</ViewportTrigger>

@@ -27,7 +27,7 @@ const team = [
 			'Tero is a seasoned data leader and entrepreneur. As a CDO and data leader he has led major data/AI transformation and governance programs at UPM, a global manufacturing company & advanced engineering practices at Microsoft. Tero has also shaped data strategy at Sanoma Media Finland. With expertise in business development, go-to-market data cloud strategies, and IT procurement, Tero has served management teams, chaired governance boards, and overseen complex data ecosystems. In addition to his CCO role, Tero currently leads Ekai’s global GTM efforts including its partnership with Snowflake.',
 	},
 ];
-export default function Team() {
+export default function Team({ data: { heading, team } }) {
 	const [expandedIndex, setExpandedIndex] = useState(null);
 
 	const toggleExpand = (index) => {
@@ -36,10 +36,7 @@ export default function Team() {
 
 	return (
 		<div className='team-section'>
-			<h2>
-				Meet the team making your data work for <em>everyone.</em>
-			</h2>
-
+			<h2 dangerouslySetInnerHTML={{ __html: heading }}></h2>
 			<div className='team-grid'>
 				{team.map((member, index) => {
 					const isExpanded = expandedIndex === index;
