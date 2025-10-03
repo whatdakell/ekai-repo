@@ -21,9 +21,9 @@ import ViewportTrigger from './components/ViewportTrigger';
 function App() {
 	return (
 		<div className='App'>
-			{/* Main Nav */}
+			{/* nav */}
 			<HeaderNav />
-			{/* Hero Component */}
+			{/* hero with step timeline nested in component*/}
 			<Hero headline={content.hero.headline} copy={content.hero.copy} steps={content.hero.steps} />
 
 			<section className='inner-max-width center'>
@@ -50,18 +50,10 @@ function App() {
 				</ViewportTrigger>
 			</section>
 
-			<SliderSection />
+			<SliderSection content={content.slider} />
 
 			<ViewportTrigger>
-				<CopyMediaBlock
-					type='image'
-					heading='Your organization has <em>the data...</em>
-							<br />
-							but why is it so <em>difficult</em> to use?'
-					src='/images/business-fig.png'
-					alt='Organization graphic'
-					copy='On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.'
-				/>
+				<CopyMediaBlock data={content.orgData} />
 			</ViewportTrigger>
 
 			{/* Will make reusable */}

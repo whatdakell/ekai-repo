@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import '../styles/components/_CopyMediaBlock.scss';
-export default function CopyMediaBlock({ type = 'video', src, poster, alt, heading, copy }) {
+export default function CopyMediaBlock({ data }) {
+	console.log(data);
 	const mediaRef = useRef(null);
 	const containerRef = useRef(null);
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -46,16 +47,16 @@ export default function CopyMediaBlock({ type = 'video', src, poster, alt, headi
 
 	return (
 		<section className='media-section inner-max-width-tight content' ref={containerRef}>
-			<h2 className='media-title' dangerouslySetInnerHTML={{ __html: heading }}></h2>
+			<h2 className='media-title' dangerouslySetInnerHTML={{ __html: data.headline }}></h2>
 
 			<div className={`media-wrapper ${isVisible ? 'zoomed' : ''}`}>
-				{type === 'video' ? (
+				{data.type === 'video' ? (
 					<>
 						<video
 							ref={mediaRef}
 							className='media-element'
-							src={src}
-							poster={poster}
+							src={data.src}
+							poster={data.poster}
 							playsInline
 							onClick={handlePlayPause} // allow clicking video itself
 						/>
@@ -66,10 +67,10 @@ export default function CopyMediaBlock({ type = 'video', src, poster, alt, headi
 						)}
 					</>
 				) : (
-					<img src={src} alt={alt || 'Media preview'} className='media-element' />
+					<img src={data.src} alt={data.alt || 'Media preview'} className='media-element' />
 				)}
 			</div>
-			{copy && <p className='larger-p' dangerouslySetInnerHTML={{ __html: copy }}></p>}
+			{data.copy && <p className='larger-p' dangerouslySetInnerHTML={{ __html: data.copy }}></p>}
 		</section>
 	);
 }
