@@ -20,37 +20,36 @@
 	}
 
 	.steps {
+		margin-top: 0;
 		display: flex;
 		justify-content: center;
 		gap: 1.5rem;
-		margin: 2rem 1rem;
-		margin-top: 80px;
 		margin-bottom: 0;
 		// flex-wrap: wrap;
 		align-items: start;
 		padding: 0;
-		width: 98%;
+		width: 100%;
 		max-width: 1400px;
 		position: relative;
 		@include bp(S) {
 			flex-direction: column;
 			align-items: center;
 		}
-		&::before {
-			content: '';
-			height: 3px;
-			width: 80%;
-			background-color: #ffb401;
-			position: absolute;
-			top: 55px;
-			z-index: 0;
-			animation: drawBorder 0.8s forwards;
-			@include bp(S) {
-				transform: rotate(90deg);
-				width: 40%;
-				top: 162px;
-			}
-		}
+		// &::before {
+		// 	content: '';
+		// 	height: 3px;
+		// 	width: 80%;
+		// 	background-color: #ffb401;
+		// 	position: absolute;
+		// 	top: 55px;
+		// 	z-index: 0;
+		// 	animation: drawBorder 0.8s forwards;
+		// 	@include bp(S) {
+		// 		transform: rotate(90deg);
+		// 		width: 40%;
+		// 		top: 162px;
+		// 	}
+		// }
 	}
 
 	@keyframes drawBorder {
@@ -63,7 +62,7 @@
 	}
 
 	.step {
-		@include staggerAnimation(10, 300, 150, true);
+		@include staggerAnimation(10, 100, 250, true);
 		padding: toRem(30) toRem(25);
 		border-radius: 20px;
 		min-width: 180px;
@@ -116,7 +115,7 @@
 
 			.step-description {
 				margin-top: 20px;
-				max-height: 100px;
+				max-height: 500px;
 				opacity: 1;
 			}
 		}
@@ -136,5 +135,106 @@
 		&:nth-child(3) {
 			background-color: #ffd97f;
 		}
+	}
+}
+
+.steps-container {
+	margin: 2rem 0;
+	margin-top: 80px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 80%;
+	// margin: 3rem 0;
+
+	.line {
+		position: absolute;
+		// top: 50%;
+		transition: all 3s ease;
+		background: #f4c94d;
+		@media (min-width: 768px) {
+			left: 0;
+			height: 3px;
+			top: 55px;
+			// transition: width 3s ease;
+			z-index: 0;
+			width: 0; // start hidden
+			// transform: translateY(-50%);
+			&.draw {
+				width: 100%; // animate full width
+			}
+		}
+
+		@include bp(S) {
+			transform: rotate(90deg);
+			width: 40%;
+		}
+
+		// &.draw {
+		// 	width: 100%; // animate full width
+		// }
+	}
+	@media (max-width: 767px) {
+		.line {
+			top: 0;
+			left: 50%;
+			width: 3px;
+			height: 0; // start hidden
+			transform: translateX(-50%);
+
+			&.draw {
+				height: 100%;
+			}
+		}
+	}
+	// }
+
+	// .steps {
+	// display: flex;
+	// gap: 2rem;
+	// list-style: none;
+	// padding: 0;
+	// margin: 0;
+	// position: relative;
+	// z-index: 1;
+
+	// .step {
+	// 	opacity: 0;
+	// 	transform: translateY(20px);
+	// 	// background: white;
+	// 	// border: 2px solid #f8d87a;
+	// 	// border-radius: 10px;
+	// 	// padding: 1rem 1.5rem;
+	// 	// min-width: 200px;
+	// 	// text-align: center;
+	// 	// font-weight: 500;
+	// 	transition: background 0.3s ease;
+
+	// 	&.fade-in {
+	// 		animation: fadeInUp 0.5s forwards;
+	// 	}
+
+	// 	// &:nth-child(4) {
+	// 	// 	background: #f8d87a; // last one highlighted
+	// 	// }
+
+	// 	.step-description {
+	// 		// margin-top: 0.5rem;
+	// 		// font-size: 0.9rem;
+	// 		// color: #555;
+	// 	}
+	// }
+}
+// }
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

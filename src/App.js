@@ -16,6 +16,7 @@ import Button from './components/Button';
 import Card from './components/Card';
 import ContactForm from './components/ContactForm';
 import CopyMediaBlock from './components/CopyMediaBlock';
+import ViewportTrigger from './components/ViewportTrigger';
 
 function App() {
 	return (
@@ -46,17 +47,20 @@ function App() {
 			</section>
 
 			<SliderSection />
+
 			<section className='inner-max-width center vertical-spacing'>
-				<div className='copy-box inner-max-width-tight'>
-					<h2>
-						Your organization has <em>the data...</em>
-						<br />
-						but why is it so <em>difficult</em> to use?
-					</h2>
-					<img className='figure' src='/images/business-fig.png' />
-					<p className='larger-p'>
-						On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.
-					</p>
+				<div className={`copy-box inner-max-width-tight`}>
+					<ViewportTrigger>
+						<h2>
+							Your organization has <em>the data...</em>
+							<br />
+							but why is it so <em>difficult</em> to use?
+						</h2>
+						<img className='figure' src='/images/business-fig.png' />
+						<p className='larger-p'>
+							On average, data projects take <strong>3–6 months to complete</strong>. Collaboration between business and IT is often filled with friction, reducing time to value, velocity and—eventually—innovation.
+						</p>
+					</ViewportTrigger>
 				</div>
 			</section>
 

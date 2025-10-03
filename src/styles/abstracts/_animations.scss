@@ -4,6 +4,17 @@ $introDuration: 1s;
 $introPageShift: 1.3s;
 $introTotalTime: $introDelay + $introDuration;
 
+.fadeUp {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.6s ease-out;
+
+	&.in-viewport {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .moveUp {
 	// transform: translateY(40%);
 	opacity: 0;
