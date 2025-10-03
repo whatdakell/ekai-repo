@@ -61,7 +61,7 @@ function App() {
 			</section>
 
 			{/* Will make reusable */}
-			<section className='content inner-max-width'>
+			<section className='content inner-max-width vertical-spacing '>
 				<div className='copy-box inner-max-width-tight'>
 					<h2>
 						With Ekai, data projects can be measured <em>in hours</em>, not months
@@ -90,7 +90,7 @@ function App() {
 					Book a demo
 				</a>
 			</section>
-			<div className='copy-box  copy-box-left inner-max-width'>
+			<div className='copy-box copy-box-left inner-max-width vertical-spacing'>
 				<h2>Backed by proud partners within the data and AI community</h2>
 				<div className='copy-box-p'>
 					<img src='/images/ai-community.png' />

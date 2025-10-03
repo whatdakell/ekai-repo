@@ -100,3 +100,24 @@
 		}
 	}
 }
+
+@mixin staggerAnimation($numOfItems, $intervalDelay, $setStagger: false, $animation: false) {
+	@for $i from 1 through $numOfItems {
+		&:nth-child(#{($i)}) {
+			@if $setStagger {
+				$fixedDelay: $intervalDelay + $setStagger * $i;
+				@if $animation {
+					animation-delay: #{$fixedDelay}ms;
+				} @else {
+					transition-delay: #{$fixedDelay}ms;
+				}
+			} @else {
+				@if $animation {
+					animation-delay: #{$intervalDelay * $i}ms;
+				} @else {
+					transition-delay: #{$intervalDelay * $i}ms;
+				}
+			}
+		}
+	}
+}

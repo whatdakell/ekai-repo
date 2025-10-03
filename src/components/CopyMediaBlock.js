@@ -10,12 +10,31 @@ export default function CopyMediaBlock({ type = 'video', src, poster, alt }) {
 		if (!mediaRef.current) return;
 		if (isPlaying) {
 			mediaRef.current.pause();
+			setIsPlaying(false);
 		} else {
 			mediaRef.current.play();
+			setIsPlaying(true);
 		}
-		setIsPlaying(!isPlaying);
 	};
 
+	// Sync state with actual video events (in case user uses keyboard/taps video)
+	useEffect(() => {
+		const video = mediaRef.current;
+		if (!video) return;
+
+		const onPlay = () => setIsPlaying(true);
+		const onPause = () => setIsPlaying(false);
+
+		video.addEventListener('play', onPlay);
+		video.addEventListener('pause', onPause);
+
+		return () => {
+			video.removeEventListener('play', onPlay);
+			video.removeEventListener('pause', onPause);
+		};
+	}, []);
+
+	// Scroll observer for zoom animation
 	useEffect(() => {
 		const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.3 });
 
@@ -35,7 +54,14 @@ export default function CopyMediaBlock({ type = 'video', src, poster, alt }) {
 			<div className={`media-wrapper ${isVisible ? 'zoomed' : ''}`}>
 				{type === 'video' ? (
 					<>
-						<video ref={mediaRef} className='media-element' src={src} poster={poster} playsInline />
+						<video
+							ref={mediaRef}
+							className='media-element'
+							src={src}
+							poster={poster}
+							playsInline
+							onClick={handlePlayPause} // allow clicking video itself
+						/>
 						{!isPlaying && (
 							<button className='custom-play-btn' onClick={handlePlayPause}>
 								<span className='play-icon'>▶</span>

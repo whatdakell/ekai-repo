@@ -20,7 +20,7 @@
 		inset: 0;
 		padding: 3px; /* border thickness */
 		border-radius: inherit;
-		background: linear-gradient(180deg, rgba(255, 243, 213, 0) 0%, #fff3d5 50%, #ffd97f 100%);
+		background: linear-gradient(to right, #ffd97f, #ffd97f 51%, #fefffe);
 		-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
 		-webkit-mask-composite: xor;
 		mask-composite: exclude; /* only the ring remains */
@@ -37,6 +37,7 @@
 		display: flex;
 		flex-direction: column;
 		max-width: 800px;
+		width: 100%;
 	}
 
 	.faq-item {
@@ -62,14 +63,15 @@
 			mask-composite: exclude; /* only the ring remains */
 			pointer-events: none;
 		}
-		.heading-3 {
+		.t30-text {
 			text-align: left;
+			padding-right: 10px;
 		}
 		.faq-question {
 			display: flex;
 			justify-content: space-between;
 			font-weight: 600;
-			// font-size: 1.05rem;
+			align-items: center;
 		}
 
 		.icon {

@@ -42,7 +42,7 @@ export default function Faq() {
 				{faqs.map((faq, index) => (
 					<div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`} onClick={() => toggle(index)}>
 						<div className='faq-question'>
-							<span className='heading-3'>{faq.question}</span>
+							<span className='t30-text'>{faq.question}</span>
 							<span className='icon'>{activeIndex === index ? '−' : '+'}</span>
 						</div>
 						{activeIndex === index && (

@@ -2,7 +2,24 @@ export const content = {
 	hero: {
 		headline: 'Free <em>your data</em>. Empower everyone.',
 		copy: 'Ekai is an agentic AI platform making your organization’s data work easier for everyone—with value delivered faster. <br><br> Through our self-service platform, any business function can access and explore existing company analytical data independently. Your data is finally understandable, accessible, and actionable across your entire organization.',
-		steps: ['Connect to data platforms', 'Provide analytical requirements', 'Generate code package', 'Publish and review'],
+		steps: [
+			{
+				title: 'Connect to data platforms',
+				description: 'Modelling AI agents automatically generate logical models',
+			},
+			{
+				title: 'Provide analytical requirements',
+				description: 'Discovery AI agents creates requirement documents',
+			},
+			{
+				title: 'Generate code package',
+				description: 'Workflow AI agents creates code, data models, and lineage',
+			},
+			{
+				title: 'Publish and review',
+				description: 'All that’s left for you is to download a consolidated package for IT review and it’s ready to go live.',
+			},
+		],
 	},
 	organizationModule: {
 		headline: 'Your organization has <em>the data...</em><br />but why is it so <em>difficult</em> to use?',

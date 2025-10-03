@@ -1,0 +1,74 @@
+$animationTiming: cubic-bezier(0.425, 0.005, 0, 1);
+$introDelay: 2.2s;
+$introDuration: 1s;
+$introPageShift: 1.3s;
+$introTotalTime: $introDelay + $introDuration;
+
+.moveUp {
+	// transform: translateY(40%);
+	opacity: 0;
+	animation: fadeInUp 0.8s forwards;
+	// transition: all 0.3s cubic-bezier(0.25, 0, 0.25, 1.01);
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.moveUpViewport {
+	transform: translateY(40%);
+	opacity: 0;
+	transition: all 1s cubic-bezier(0.25, 0, 0.25, 1.01);
+	.hh-in-view & {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+.moveUpGrow {
+	overflow: hidden;
+	position: relative;
+	@extend .moveUp;
+	&:after {
+		background: white;
+		content: '';
+		top: 0;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		transform: translateY(0%);
+		transition: transform 1s cubic-bezier(0.6, 0.19, 0.07, 1);
+	}
+}
+.opacity {
+	opacity: 0;
+	transition: opacity 0.7s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.opacityUp {
+	opacity: 0;
+	transform: translate3d(0, 20px, 0);
+	transition: transform 1s cubic-bezier(0, 0.68, 0.41, 0.98), opacity 0.8s ease-in;
+	.animate-in & {
+		opacity: 1;
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+.borderDraw {
+	overflow: hidden;
+	&:after {
+		transform: translateX(-100%);
+		transition: transform 400ms ease-in-out;
+		left: 0;
+		.animate-in & {
+			transform: translateX(0%);
+		}
+	}
+}
