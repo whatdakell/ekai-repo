@@ -27,7 +27,7 @@ function Slider({ slides }) {
 						<ViewportTrigger once stagger key={index}>
 							<div className='slide'>
 								<h3>{step.title}</h3>
-								<p>{step.text}</p>
+								<p dangerouslySetInnerHTML={{ __html: step.text }}></p>
 							</div>
 						</ViewportTrigger>
 					))}

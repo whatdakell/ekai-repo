@@ -1,11 +1,14 @@
 @import 'abstracts/mixins', 'abstracts/variables', 'abstracts/animations';
 
-@import 'base/reset', 'base/typography';
+@import 'base/typography';
 
 @import 'layout/header', 'layout/footer';
 
-@import 'components/button', 'components/input';
+@import 'components/button';
 
+html {
+	scroll-behavior: smooth;
+}
 html {
 	font-size: 16px;
 	font-size: 1rem;
@@ -28,13 +31,15 @@ html {
 }
 .content {
 	text-align: center;
-	margin: toRem(125) auto;
+	margin: toRem(250) auto !important;
+	// padding-top: toRem(125);
+	// padding-bottom: toRem(125);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
 	@include bp(S) {
-		margin: 50px auto;
+		// margin: 50px auto;
 	}
 }
 .center {
@@ -43,7 +48,7 @@ html {
 	margin-right: auto;
 }
 .border-card {
-	padding: 40px;
+	padding: toRem(40);
 	border-radius: 20px;
 }
 .App {
@@ -74,14 +79,29 @@ html {
 		width: 100%;
 		@include bp(M) {
 			width: 95%;
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		@include bp(S) {
+			width: 90%;
 		}
 	}
 }
-
+.anchor {
+	scroll-margin-top: 60px;
+}
+.org + .cards h3 {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	@include bp(S) {
+		max-width: 100%;
+	}
+}
 // Start of second section
 .copy-box {
 	text-align: center;
-	margin-top: toRem(60);
+	// margin-top: toRem(60);
 	margin-bottom: toRem(60);
 	.figure {
 		max-width: 600px;
@@ -123,11 +143,17 @@ html {
 			+ .btn {
 				margin-top: 30px;
 			}
+			@include bp(S) {
+				width: 100%;
+			}
 		}
 		h2 {
 			text-align: left;
 			padding-right: 10px;
 			width: 70%;
+			@include bp(S) {
+				width: 100%;
+			}
 		}
 		p {
 			max-width: 438px;
@@ -183,6 +209,9 @@ html {
 		display: grid;
 		grid-template-columns: 1fr 1fr; /* Defines two columns of equal width */
 		grid-template-rows: auto auto;
+		@include bp(S) {
+			grid-template-columns: 1fr;
+		}
 		.card {
 			text-align: left;
 			h3 {

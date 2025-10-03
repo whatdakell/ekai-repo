@@ -16,7 +16,7 @@ function Hero({ headline, copy, steps }) {
 			<div className='inner-max-width-tight moveUp'>
 				<h1 className='heading-level-1' dangerouslySetInnerHTML={{ __html: headline }}></h1>
 				<p dangerouslySetInnerHTML={{ __html: copy }}></p>
-				<Button href='#' text='Contact us'></Button>
+				<Button href='#contact' text='Contact us'></Button>
 			</div>
 			{/* <Steps steps={steps}></Steps> */}
 			<div className='steps-container'>

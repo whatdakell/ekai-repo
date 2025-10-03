@@ -49,11 +49,11 @@ function HeaderNav() {
 							About
 						</a>
 						<a href='#how'>How It Works</a>
-						<a href='#team'>Team</a>
+						<a href='#about'>Team</a>
 						<a href='#pricing'>Pricing</a>
 						<a href='#contact'>Contact</a>
 					</div>
-					<Button href='test' text='Book a demo' btnStyle='btn-gradient white' />
+					<Button href='#contact' text='Book a demo' btnStyle='btn-gradient white' />
 				</nav>
 
 				{/* Hamburger */}

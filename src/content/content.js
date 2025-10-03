@@ -43,7 +43,7 @@ export const content = {
 		steps: [
 			{
 				title: '1. Connect',
-				text: 'Ekai connects with your data platforms and automatically builds logical models for whatever your analytics use case might be.',
+				text: 'Ekai connects with your data platforms and automatically builds logical models for whatever your analytics use case might be',
 			},
 			{
 				title: '2. Process',
@@ -51,15 +51,15 @@ export const content = {
 			},
 			{
 				title: '3. Generate',
-				text: 'Ekai automatically builds technical documentation, models, and tables, and populates a business catalog with documented business concepts.',
+				text: "Ekai automatically builds the data model's code and technical documentation, including fact and dimension tables, and populates a business glossary with documented business concepts and metrics.",
 			},
 			{
-				title: '4. Generate',
-				text: 'Ekai automatically builds technical documentation, models, and tables, and populates a business catalog with documented business concepts.',
+				title: '4. Publish',
+				text: 'Download the generated code and requirements for deployment.<br><br>Ekai also offers the possibility to run the package immediately within your data platform. This option will provide instant insights to your data.<br><br>Your data becomes instantly searchable and usable by everyone. Business users get answers directly while IT receives full documentation for governance.',
 			},
 			{
-				title: '5. Generate',
-				text: 'Ekai automatically builds technical documentation, models, and tables, and populates a business catalog with documented business concepts.',
+				title: '5. Insights',
+				text: 'When code has been run in your data platform Ekai generates insights and reports  according to your business requirements and metrics.<br><br>On these insights the user can ask relevant more detailed questions from the AI agent. Your analytical use case is immediately available for consumption.',
 			},
 		],
 	},

@@ -1,12 +1,7 @@
-/**
-* @desc         card styles.
-* @requires     variables.scss
-*/
 @import '../abstracts/mixins';
 .pricing-section {
-	padding: 3rem 0;
+	// padding-bottom: 3rem;
 	text-align: center;
-	// background: linear-gradient(to bottom, #fff6d8, #ffeec2);
 
 	h2 {
 		// margin-bottom: 2rem;
@@ -29,6 +24,9 @@
 		box-sizing: content-box;
 		padding: 20px;
 		margin: 30px auto;
+		@include bp(M) {
+			min-height: 100px;
+		}
 		.price {
 			text-align: center;
 			margin-bottom: 20px;
@@ -51,16 +49,19 @@
 		&:hover {
 			transform: scale(1.1);
 		}
+		@include bp(S) {
+			transform: scale(1) !important;
+		}
 		&::before {
 			content: '';
 			position: absolute;
 			inset: 0;
-			padding: 3px; /* border thickness */
+			padding: 3px;
 			border-radius: inherit;
 			background: linear-gradient(to top, #ffd97f, #ffd97f 51%, #fefffe);
 			-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
 			-webkit-mask-composite: xor;
-			mask-composite: exclude; /* only the ring remains */
+			mask-composite: exclude;
 			pointer-events: none;
 		}
 
@@ -81,16 +82,13 @@
 
 		border-radius: 12px;
 		padding: 20px;
-		// box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 		text-align: left;
 
 		h3 {
-			// font-size: 1.25rem;
 			margin-bottom: 0.25rem;
 		}
 
 		.price {
-			// font-weight: bold;
 			color: #454752;
 			margin-bottom: 1rem;
 		}
@@ -105,10 +103,22 @@
 		}
 
 		.sub-card {
-			// background: #fff8e0;
 			border-radius: 12px;
-			// padding: 1rem;
 			position: relative;
+			a {
+				text-align: center;
+				text-decoration: none;
+				color: #454752;
+
+				.t30-text {
+					transition: all 0.3s ease;
+				}
+				&:hover {
+					.t30-text {
+						transform: scale(0.95);
+					}
+				}
+			}
 			li {
 				list-style-type: none;
 				padding-left: 50px;
@@ -121,10 +131,6 @@
 				background-image: url('/images/check_circle.svg');
 				left: 20px;
 				position: absolute;
-				// width: 10px;
-				// background: yellow;
-				// border-radius: 100%;
-				// height: auto;
 				padding: 10px;
 				height: 10px;
 				box-sizing: border-box;
@@ -134,7 +140,6 @@
 				background-size: 20px;
 				background-repeat: no-repeat;
 			}
-			// border: 1px solid #ffd97f;
 
 			.t30-text {
 				border: solid 2px #ffd97f;
@@ -142,8 +147,6 @@
 			}
 
 			h4 {
-				// font-size: 1rem;
-				// font-weight: 600;
 				margin-bottom: 0.75rem;
 			}
 

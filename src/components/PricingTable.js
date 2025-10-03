@@ -24,7 +24,9 @@ export default function PricingTable({ data: { heading, plans, footnote } }) {
 							</div>
 
 							<div className='sub-card'>
-								<h4 className='t30-text border-wrapper'>{plan.subPlan.title}</h4>
+								<a href='#contact'>
+									<h4 className='t30-text border-wrapper'>{plan.subPlan.title}</h4>
+								</a>
 								<ul>
 									{plan.subPlan.features.map((feature, i) => (
 										<li className='list-items' key={i}>

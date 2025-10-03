@@ -1,12 +1,7 @@
-/**
-* @desc         card styles.
-* @requires     variables.scss
-*/
 @import '../abstracts/mixins';
 
 .accordion-section {
 	position: relative;
-	// max-width: 900px;
 	margin: 3rem auto;
 }
 .accordion {
@@ -14,24 +9,26 @@
 }
 h2 {
 	text-align: center;
-	// margin-bottom: 2rem;
 }
 
 .accordion-header {
 	display: grid;
-	// grid-template-columns: 1fr 1fr 1fr;
 	font-weight: bold;
 	padding: 1rem;
-	// border-bottom: 2px solid #ddd;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	text-align: left;
+	@include bp(S) {
+		flex-direction: column;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
 }
 
 .accordion-item,
 .accordion-header {
 	border-radius: 20px;
-	background: #fff; /* inner fill */
+	background: #fff;
 	padding: 20px;
 }
 
@@ -59,8 +56,16 @@ h2 {
 	}
 
 	cursor: pointer;
+	@include bp(S) {
+		display: flex;
+		flex-direction: column;
+	}
 	&:hover .accordion-content {
 		display: grid;
+		@include bp(S) {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 	.accordion-title {
@@ -78,6 +83,10 @@ h2 {
 		overflow: hidden;
 		max-height: 0;
 		transition: max-height 0.4s ease, opacity 0.3s ease;
+		@include bp(S) {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
 
 		p {
 			padding-right: 20px;
@@ -85,7 +94,7 @@ h2 {
 	}
 	&.active {
 		.accordion-content {
-			max-height: 200px; // pick something safely larger than expected text height
+			max-height: 200px;
 			opacity: 1;
 		}
 	}

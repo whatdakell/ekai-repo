@@ -28,7 +28,7 @@ function App() {
 
 			<section className='inner-max-width center'>
 				<ViewportTrigger>
-					<div className='copy-box inner-max-width-tight'>
+					<div className='copy-box org inner-max-width-tight'>
 						<h2 dangerouslySetInnerHTML={{ __html: content.organizationModule.headline }}></h2>
 						<p dangerouslySetInnerHTML={{ __html: content.organizationModule.copy }}></p>
 					</div>
@@ -46,7 +46,7 @@ function App() {
 							</Card>
 						))}
 					</div>
-					<Button href='#' text='Book a demo' btnStyle='btn-yellow'></Button>
+					<Button href='#contact' text='Book a demo' btnStyle='btn-yellow'></Button>
 				</ViewportTrigger>
 			</section>
 
@@ -72,7 +72,7 @@ function App() {
 							))}
 						</div>
 					</ViewportTrigger>
-					<Button href='#' text='Book a demo' btnStyle='btn-gradient'></Button>
+					<Button href='#contact' text='Book a demo' btnStyle='btn-gradient'></Button>
 				</section>
 			</ViewportTrigger>
 			<ViewportTrigger stagger>
@@ -88,22 +88,26 @@ function App() {
 					<HoverAccordion data={content.accordion} />
 					<div className='inner-max-width-tight'>
 						<p className='larger-p margin-bottom-40'>{content.accordion.footnote}</p>
-						<Button href='#' text='Book a demo' btnStyle='btn-gradient'></Button>
+						<Button href='#contact' text='Book a demo' btnStyle='btn-gradient'></Button>
 					</div>
 				</div>
 			</ViewportTrigger>
 			<ViewportTrigger>
-				<section className='content inner-max-width center'>
+				<section className='content inner-max-width center anchor' id='about'>
 					<Team data={content.teamSection} />
 				</section>
 			</ViewportTrigger>
-			<HoverTimeline data={content.hoverTimeline} />
+			<div className='anchor' id='how'>
+				<HoverTimeline data={content.hoverTimeline} />
+			</div>
 
 			<ViewportTrigger>
 				<CopyMediaBlock data={content.videoBlock} />
 			</ViewportTrigger>
 			<ViewportTrigger>
-				<PricingTable data={content.pricingTable} />
+				<div className='anchor' id='pricing'>
+					<PricingTable data={content.pricingTable} />
+				</div>
 			</ViewportTrigger>
 
 			<div className='content'>
@@ -116,11 +120,13 @@ function App() {
 							<h2 dangerouslySetInnerHTML={{ __html: content.liberateData.heading }}></h2>
 							<p>{content.liberateData.copy}</p>
 						</div>
-						<Button href='#' text='Book a demo' btnStyle='btn-gradient'></Button>
+						<Button href='#contact' text='Book a demo' btnStyle='btn-gradient'></Button>
 					</div>
 				</div>
 			</ViewportTrigger>
-			<ContactForm />
+			<div className='anchor' id='contact'>
+				<ContactForm />
+			</div>
 			<Footer />
 		</div>
 	);

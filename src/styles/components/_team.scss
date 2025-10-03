@@ -1,11 +1,9 @@
-/**
-* @desc         card styles.
-* @requires     variables.scss
-*/
 @import '../abstracts/mixins';
 .team-section {
 	text-align: center;
-	// padding: 3rem 2rem;
+	@include bp(S) {
+		width: 100%;
+	}
 }
 
 .team-grid {
@@ -53,18 +51,13 @@
 	}
 
 	.bio {
-		// font-size: 0.95rem;
-		// line-height: 1.4;
-		// text-align: left;
 		margin-bottom: 1rem;
-		// transition: all 0.3s ease;
 	}
 
 	.read-more {
 		background: none;
 		border: none;
 		cursor: pointer;
-		// transition: color 0.2s ease;
 		font-size: 18px;
 		font-weight: normal;
 		font-stretch: normal;
@@ -83,5 +76,5 @@
 }
 
 .team-card.expanded {
-	grid-column: span 1; // stays inline with grid
+	grid-column: span 1;
 }

@@ -18,7 +18,7 @@ function SliderSection({ content }) {
 				<section className='steps-section'>
 					<Slider slides={content.steps} />
 				</section>
-				<Button href='#' text='Learn more' btnStyle='btn-gradient center'></Button>
+				<Button href='#how' text='Learn more' btnStyle='btn-gradient center'></Button>
 			</div>
 		</ViewportTrigger>
 	);

@@ -1,8 +1,3 @@
-/**
-* @desc         button variants.
-* @requires     variables.scss
-*/
-
 .btn {
 	padding: 0.75rem 1.25rem;
 	min-width: 140px;
@@ -22,6 +17,12 @@
 	font-style: normal;
 	line-height: normal;
 	letter-spacing: -0.08px;
+	transition: all 0.3s ease;
+	&:hover {
+		color: #ffb401;
+		transform: scale(0.95);
+		cursor: pointer;
+	}
 	&-gradient {
 		font-size: toRem(22.5);
 		min-width: toRem(200);
@@ -33,16 +34,19 @@
 		position: relative;
 		border: none;
 		background-color: #ffd97f;
+		&:hover {
+			color: white;
+		}
 		&::before {
 			content: '';
 			position: absolute;
 			inset: 0;
-			padding: 3px; /* border thickness */
+			padding: 3px;
 			border-radius: inherit;
 			background: linear-gradient(to right, #ffb401, #ffd97f 51%, #fefffe);
 			-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
 			-webkit-mask-composite: xor;
-			mask-composite: exclude; /* only the ring remains */
+			mask-composite: exclude;
 			pointer-events: none;
 		}
 	}
@@ -55,9 +59,12 @@
 		line-height: normal;
 		letter-spacing: -0.08px;
 		min-width: 140px;
+		&:hover {
+			color: #ffb401;
+		}
 	}
 	&-yellow {
-		font-size: 22.5px;
+		font-size: toRem(22.5);
 		min-width: 200px;
 		font-weight: normal;
 		font-stretch: normal;
@@ -66,5 +73,11 @@
 		letter-spacing: -0.11px;
 		border: solid 0.9px #fefffe;
 		background-color: #ffd97f;
+		&:hover {
+			color: white;
+		}
+	}
+	@include bp(S) {
+		min-width: 140px !important;
 	}
 }

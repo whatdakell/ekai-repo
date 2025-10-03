@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import '../styles/components/_hoverTimeline.scss';
 
 export default function HoverTimeline({ data: { heading, copy, steps } }) {
-	const [active, setActive] = useState(null);
+	const [active, setActive] = useState(0); // default active = first step
+	const [hovered, setHovered] = useState(null);
 
-	const toggle = (index) => {
-		setActive(index === active ? null : index);
-	};
+	// If hovering, show hover step
+	// If not hovering, and no click, reset to -1 (zero progress)
+	// Otherwise fallback to active
+	const current = hovered !== null ? hovered : active;
+
+	// Progress bar value
+	const progressIndex = hovered !== null ? hovered : active !== null ? active : -1;
 
 	return (
 		<div className='how-section inner-max-width-tight'>
@@ -14,25 +19,27 @@ export default function HoverTimeline({ data: { heading, copy, steps } }) {
 				<h2>{heading}</h2>
 				<p>{copy}</p>
 			</div>
+
 			{/* progress bar */}
 			<div className='progress-bar'>
 				<div
 					className='progress-fill'
 					style={{
-						width: `${((active || 0) / steps.length) * 100}%`,
+						width: progressIndex >= 0 ? `${((progressIndex + 1) / steps.length) * 100}%` : '0%',
 					}}
 				/>
 			</div>
+
 			{/* steps */}
 			<div className='timeline-steps'>
 				{steps.map((step, index) => (
-					<div key={index} className={`timeline-step ${active === index ? 'active' : ''}`} onClick={() => toggle(index)} onMouseEnter={() => setActive(index)} onMouseLeave={() => setActive(null)}>
+					<div key={index} className={`timeline-step ${current === index ? 'active' : ''}`} onClick={() => setActive(index)} onMouseEnter={() => setActive(index)} onMouseLeave={() => setActive(null)}>
 						<div className='timeline-step-header'>
 							<span className='timeline-step-num heading-3'>{`0${index + 1}`}</span>
 							<span className='timeline-step-title heading-3'>{step.title}</span>
 						</div>
 						{active === index && (
-							<div className='timeline-step-content'>
+							<div className={`timeline-step-content ${current === index ? 'show' : ''}`}>
 								<p>{step.desc}</p>
 							</div>
 						)}

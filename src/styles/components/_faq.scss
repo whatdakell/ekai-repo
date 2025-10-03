@@ -1,29 +1,24 @@
-/**
-* @desc         card styles.
-* @requires     variables.scss
-*/
 @import '../abstracts/mixins';
 .faq-section {
 	display: flex;
 	align-items: baseline;
-	margin: 3rem auto;
+	// margin: 3rem auto;
 	padding: 40px toRem(60);
 	background: #fff3d5;
 	border-radius: 20px;
 	position: relative;
 	flex-wrap: wrap;
 	width: 95%;
-	// box-sizing: content-box;
 	&::before {
 		content: '';
 		position: absolute;
 		inset: 0;
-		padding: 3px; /* border thickness */
+		padding: 3px;
 		border-radius: inherit;
 		background: linear-gradient(to right, #ffd97f, #ffd97f 51%, #fefffe);
 		-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
 		-webkit-mask-composite: xor;
-		mask-composite: exclude; /* only the ring remains */
+		mask-composite: exclude;
 		pointer-events: none;
 	}
 
@@ -42,17 +37,14 @@
 
 	.faq-item {
 		border-radius: 20px;
-		background: #fff; /* inner fill */
+		background: #fff;
 		padding: 30px;
 		cursor: pointer;
-		// transition: background 0.3s ease;
-		// transition-behavior: normal;
-		// transition-duration: 0.3s;
-		// transition-timing-function: ease;
-		// transition-delay: 0s;
-		// transition-property: background;
 		position: relative;
-		margin-top: 20px;
+
+		&:not(:first-of-type) {
+			margin-top: 20px;
+		}
 		@include bp(S) {
 			width: auto;
 		}
@@ -60,12 +52,12 @@
 			content: '';
 			position: absolute;
 			inset: 0;
-			padding: 3px; /* border thickness */
+			padding: 3px;
 			border-radius: inherit;
 			background: linear-gradient(180deg, rgba(255, 243, 213, 0) 0%, #fff3d5 50%, #ffd97f 100%);
 			-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
 			-webkit-mask-composite: xor;
-			mask-composite: exclude; /* only the ring remains */
+			mask-composite: exclude;
 			pointer-events: none;
 		}
 		.t30-text {

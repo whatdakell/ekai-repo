@@ -14,7 +14,6 @@ function HoverAccordion({ data: { heading, tableHeader, roles } }) {
 			<h2>{heading}</h2>
 			<ViewportTrigger stagger threshold='0.5'>
 				<div className='accordion border-card'>
-					{/* Header row */}
 					<div className='accordion-header'>
 						{tableHeader.map((copy, index) => (
 							<h4 className='t30-text' key={index}>
