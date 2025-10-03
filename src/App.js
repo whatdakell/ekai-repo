@@ -36,14 +36,13 @@ function App() {
 						{content.organizationModule.cards.map((card, index) => (
 							<Card key={index}>
 								<h3>{card.title}</h3>
-
-								<ul>
-									<ViewportTrigger stagger>
+								<ViewportTrigger stagger>
+									<ul>
 										{card.cardList.map((list, i) => (
 											<li key={i}>{list}</li>
 										))}
-									</ViewportTrigger>
-								</ul>
+									</ul>
+								</ViewportTrigger>
 							</Card>
 						))}
 					</div>

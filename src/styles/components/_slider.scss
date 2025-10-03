@@ -1,142 +1,42 @@
-.slider-container {
-	min-height: 100vh;
-	// background: linear-gradient(to bottom, #fef3c7, #fde68a);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 2rem;
-}
-
-.slider-content {
-	// max-width: 80rem;
+.slider {
+	position: relative;
 	width: 100%;
-}
-
-.slider-header {
-	margin-bottom: 4rem;
-
-	// h1 {
-	// 	font-size: 3.75rem;
-	// 	font-weight: 300;
-	// 	line-height: 1.2;
-	// 	margin-bottom: 2rem;
-	// 	color: #111827;
-
-	// 	span {
-	// // 		font-style: italic;
-	// // 		font-weight: 400;
-	// // 	}
-	// // }
-
-	// &-text {
-	// 	max-width: 32rem;
-	// }
-
-	// p {
-	// 	color: #374151;
-	// 	line-height: 1.625;
-	// 	margin-bottom: 1rem;
-	// }
+	overflow: hidden;
 }
 
 .slider-wrapper {
-	position: relative;
-	// background: rgba(255, 255, 255, 0.8);
-	// backdrop-filter: blur(4px);
-	// border: 2px solid #60a5fa;
-	// border-radius: 0.75rem;
-	// box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.slider-controls {
-	display: flex;
-	align-items: center;
-	padding: 3rem 1rem;
-}
-
-.nav-btn {
-	flex-shrink: 0;
-	width: 4rem;
-	height: 4rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
-	background: transparent;
-	border-radius: 50%;
-	cursor: pointer;
-	transition: all 0.2s;
-
-	&:hover:not(:disabled) {
-		background: #f9fafb;
-	}
-
-	&:disabled {
-		opacity: 0.3;
-		cursor: not-allowed;
-	}
-
-	&.left {
-		margin-left: -0.5rem;
-	}
-
-	&.right {
-		margin-right: -0.5rem;
-	}
-
-	span {
-		font-size: 2.25rem;
-		color: #9ca3af;
-	}
-}
-
-.slider-track-container {
-	flex: 1;
-	padding: 0 2rem;
 	overflow: hidden;
+	width: 100%;
 }
 
 .slider-track {
 	display: flex;
-	transition: transform 0.5s ease-out;
+	transition: transform 0.4s ease;
+	max-width: 500px;
 }
 
 .slide {
-	flex-shrink: 0;
-	width: 40%;
-	padding-right: 3rem;
-
-	h3 {
-		font-size: 1.875rem;
-		font-weight: 300;
-		color: #1f2937;
-		margin-bottom: 1.5rem;
-	}
-
-	p {
-		color: #4b5563;
-		line-height: 1.625;
-	}
+	flex: 0 0 80%; // one card takes ~80% of wrapper, rest peeks
+	margin-right: 20px;
+	background: #f8f8f8;
+	border-radius: 12px;
+	padding: 20px;
 }
 
-.slider-cta {
+.nav-btns {
+	position: absolute;
+	top: 50%;
+	width: 100%;
 	display: flex;
-	justify-content: center;
-	padding-bottom: 3rem;
+	justify-content: space-between;
+	transform: translateY(-50%);
+}
 
-	button {
-		padding: 0.75rem 2.5rem;
-		background: #fcd34d;
-		color: #1f2937;
-		font-weight: 500;
-		border: none;
-		border-radius: 0.5rem;
-		cursor: pointer;
-		transition: background-color 0.2s;
-		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-
-		&:hover {
-			background: #fbbf24;
-		}
-	}
+.nav-btn {
+	background: white;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
 }

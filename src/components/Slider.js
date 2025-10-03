@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 // import './styles/main.scss';
-
+import ViewportTrigger from './ViewportTrigger';
 const steps = [
 	{
 		title: '1. Connect',
@@ -92,12 +92,14 @@ function Slider() {
 					// }}
 					// onTransitionEnd={handleTransitionEnd}
 				>
-					{steps.map((step, index) => (
-						<div key={index} className='slide'>
-							<h3>{step.title}</h3>
-							<p>{step.text}</p>
-						</div>
-					))}
+					<ViewportTrigger stagger>
+						{steps.map((step, index) => (
+							<div key={index} className='slide'>
+								<h3>{step.title}</h3>
+								<p>{step.text}</p>
+							</div>
+						))}
+					</ViewportTrigger>
 				</div>
 			</div>
 			<div className='nav-btns'>
