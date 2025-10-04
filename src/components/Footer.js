@@ -1,12 +1,10 @@
 import React from 'react';
-// import './Footer.scss'; // optional for your styles
 import '../styles/components/_footer.scss';
 
 const Footer = () => {
 	return (
 		<footer className='footer vertical-spacing'>
 			<div className='footer-content'>
-				{/* Logo + Newsletter */}
 				<div className='footer-left'>
 					<a className='logo' aria-label='ekai' href='/'>
 						<img src='/images/logo.svg'></img>
