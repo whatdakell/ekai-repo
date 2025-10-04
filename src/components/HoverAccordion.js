@@ -11,7 +11,7 @@ function HoverAccordion({ data: { heading, tableHeader, roles } }) {
 
 	return (
 		<div className='accordion-section inner-max-width-tight'>
-			<h2>{heading}</h2>
+			<h2 dangerouslySetInnerHTML={{ __html: heading }}></h2>
 			<ViewportTrigger stagger threshold='0.5'>
 				<div className='accordion border-card'>
 					<div className='accordion-header'>

@@ -49,7 +49,15 @@ export default function Team({ data: { heading, team } }) {
 								<p className='bio'>{member.shortBio}</p>
 								{isExpanded && <p className='bio'>{member.fullBio}</p>}
 								<button className='read-more' onClick={() => toggleExpand(index)}>
-									{isExpanded ? 'Read less ^' : 'Read more v'}
+									{isExpanded ? (
+										<>
+											Read less <img src='/images/keyboard_arrow_down.png' alt='arrow' style={{ transform: 'rotate(180deg)' }} />
+										</>
+									) : (
+										<>
+											Read more <img src='/images/keyboard_arrow_down.png' alt='arrow' />
+										</>
+									)}
 								</button>
 							</div>
 						</ViewportTrigger>

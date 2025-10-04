@@ -8,6 +8,16 @@
 	width: 100%;
 	z-index: 999;
 	position: relative;
+	&:before {
+		content: '';
+		background: linear-gradient(to bottom, #ffffff, transparent);
+		height: 19px;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		top: 100%;
+	}
 	.navbar-container {
 		max-width: 1380px;
 		margin: 0 auto;
@@ -68,7 +78,6 @@
 		}
 	}
 
-	/* Hamburger */
 	.hamburger {
 		display: none;
 		flex-direction: column;
@@ -127,7 +136,6 @@
 			display: flex;
 		}
 	}
-	// 	/* Animate state */
 	&.animate {
 		.navbar-container {
 			opacity: 1;
@@ -150,13 +158,13 @@
 	background: white; // adjust to your design
 	transition: transform 0.35s ease, opacity 0.35s ease;
 
-	&.hidden {
-		transform: translateY(-100%);
-		opacity: 0;
-	}
+	// &.hidden {
+	// 	transform: translateY(-100%);
+	// 	opacity: 0;
+	// }
 
-	&.visible {
-		transform: translateY(0);
-		opacity: 1;
-	}
+	// &.visible {
+	// 	transform: translateY(0);
+	// 	opacity: 1;
+	// }
 }

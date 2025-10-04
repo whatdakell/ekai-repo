@@ -23,7 +23,7 @@ function App() {
 		<div className='App'>
 			<HeaderNav />
 			<Hero headline={content.hero.headline} copy={content.hero.copy} steps={content.hero.steps} />
-			<section className='inner-max-width center'>
+			<section className='inner-max-width center anchor' id='aboutEK'>
 				<ViewportTrigger>
 					<div className='copy-box org inner-max-width-tight'>
 						<h2 dangerouslySetInnerHTML={{ __html: content.organizationModule.headline }}></h2>

@@ -5,37 +5,37 @@ import Button from './Button';
 function HeaderNav() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [animate, setAnimate] = useState(false);
-	const [showHeader, setShowHeader] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
+	// const [showHeader, setShowHeader] = useState(true);
+	// const [lastScrollY, setLastScrollY] = useState(0);
 
-	// Initial mount animation
+	// // Initial mount animation
 	useEffect(() => {
 		const timer = setTimeout(() => setAnimate(true), 400);
 		return () => clearTimeout(timer);
 	}, []);
 
-	// Scroll listener for hide/show
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY < 50) {
-				// Always show near top
-				setShowHeader(true);
-			} else if (window.scrollY > lastScrollY) {
-				// scrolling down
-				setShowHeader(false);
-			} else {
-				// scrolling up
-				setShowHeader(true);
-			}
-			setLastScrollY(window.scrollY);
-		};
+	// // Scroll listener for hide/show
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		if (window.scrollY < 50) {
+	// 			// Always show near top
+	// 			setShowHeader(true);
+	// 		} else if (window.scrollY > lastScrollY) {
+	// 			// scrolling down
+	// 			setShowHeader(false);
+	// 		} else {
+	// 			// scrolling up
+	// 			setShowHeader(true);
+	// 		}
+	// 		setLastScrollY(window.scrollY);
+	// 	};
 
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, [lastScrollY]);
+	// 	window.addEventListener('scroll', handleScroll);
+	// 	return () => window.removeEventListener('scroll', handleScroll);
+	// }, [lastScrollY]);
 
 	return (
-		<header className={`navbar ${animate ? 'animate' : ''} ${showHeader ? 'visible' : 'hidden'}`}>
+		<header className={`navbar ${animate ? 'animate' : ''}`}>
 			<div className='navbar-container'>
 				{/* Logo */}
 				<a className='logo' aria-label='ekai' href='/'>
@@ -45,7 +45,7 @@ function HeaderNav() {
 				{/* Desktop Menu */}
 				<nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
 					<div className='nav-wrapper'>
-						<a href='#about' className='active'>
+						<a href='#aboutEK' className='active'>
 							About
 						</a>
 						<a href='#how'>How It Works</a>

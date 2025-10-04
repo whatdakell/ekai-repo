@@ -96,7 +96,7 @@ export const content = {
 		imgSrc: '/images/ai-community.png',
 	},
 	accordion: {
-		heading: 'Your data platforms, ready for any situation',
+		heading: 'Your data platforms, <br>ready for any situation',
 		tableHeader: ['Role/Function', 'Challenge', 'With Ekai'],
 		footnote: 'These are just a few examples. Everyone that has a question and access to ekai can connect the dots.',
 		roles: [
