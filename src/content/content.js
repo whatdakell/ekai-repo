@@ -14,12 +14,12 @@ export const content = {
 				description: 'Discovery AI agents creates requirement documents',
 			},
 			{
-				title: 'Generate code package',
+				title: 'Generate context & code package',
 				description: 'Workflow AI agents creates code, data models, and lineage',
 			},
 			{
-				title: 'Publish and review',
-				description: 'All that’s left for you is to download a consolidated package for IT review and it’s ready to go live.',
+				title: 'Publish & run your use case',
+				description: 'All that’s left for you is to download a consolidated package for IT review and it’s ready to go live',
 			},
 		],
 	},
@@ -43,7 +43,7 @@ export const content = {
 		steps: [
 			{
 				title: '1. Connect',
-				text: 'Ekai connects with your data platforms and automatically builds logical models for whatever your analytics use case might be',
+				text: 'Ekai connects with your data platforms and automatically builds logical models for whatever your analytics use case might be.',
 			},
 			{
 				title: '2. Process',

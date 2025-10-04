@@ -17,15 +17,12 @@ import Card from './components/Card';
 import ContactForm from './components/ContactForm';
 import CopyMediaBlock from './components/CopyMediaBlock';
 import ViewportTrigger from './components/ViewportTrigger';
-// s;
+
 function App() {
 	return (
 		<div className='App'>
-			{/* nav */}
 			<HeaderNav />
-			{/* hero with step timeline nested in component*/}
 			<Hero headline={content.hero.headline} copy={content.hero.copy} steps={content.hero.steps} />
-
 			<section className='inner-max-width center'>
 				<ViewportTrigger>
 					<div className='copy-box org inner-max-width-tight'>
