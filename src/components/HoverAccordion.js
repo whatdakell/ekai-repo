@@ -34,7 +34,7 @@ function HoverAccordion({ data: { heading, tableHeader, roles } }) {
 							<div className='accordion-title'>
 								<span className='t30-text'>{item.role}</span>
 								<span className='arrow'>
-									<img src='/images/keyboard_arrow_down.png' />
+									<img src='/images/keyboard_arrow_down.png' alt='' />
 								</span>
 							</div>
 

@@ -1,5 +1,3 @@
-import { Accordion } from 'react-bootstrap';
-
 export const content = {
 	hero: {
 		headline: 'Free <em>your data</em>.<br>Empower everyone.',

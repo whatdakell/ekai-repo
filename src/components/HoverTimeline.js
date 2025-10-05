@@ -2,16 +2,9 @@ import React, { useState } from 'react';
 import '../styles/components/_hoverTimeline.scss';
 
 export default function HoverTimeline({ data: { heading, copy, steps } }) {
-	const [active, setActive] = useState(0); // default active = first step
-	const [hovered, setHovered] = useState(null);
+	const [active, setActive] = useState(null);
 
-	// If hovering, show hover step
-	// If not hovering, and no click, reset to -1 (zero progress)
-	// Otherwise fallback to active
-	const current = hovered !== null ? hovered : active;
-
-	// Progress bar value
-	const progressIndex = hovered !== null ? hovered : active !== null ? active : -1;
+	const progressIndex = active !== null ? active : -1;
 
 	return (
 		<div className='how-section inner-max-width-tight'>
@@ -33,13 +26,14 @@ export default function HoverTimeline({ data: { heading, copy, steps } }) {
 			{/* steps */}
 			<div className='timeline-steps'>
 				{steps.map((step, index) => (
-					<div key={index} className={`timeline-step ${current === index ? 'active' : ''}`} onClick={() => setActive(index)} onMouseEnter={() => setActive(index)} onMouseLeave={() => setActive(null)}>
+					<div key={index} className={`timeline-step ${active === index ? 'active' : ''}`} onMouseEnter={() => setActive(index)} onMouseLeave={() => setActive(null)} onClick={() => setActive(index)}>
 						<div className='timeline-step-header'>
 							<span className='timeline-step-num heading-3'>{`0${index + 1}`}</span>
 							<span className='timeline-step-title heading-3'>{step.title}</span>
 						</div>
+
 						{active === index && (
-							<div className={`timeline-step-content ${current === index ? 'show' : ''}`}>
+							<div className='timeline-step-content show'>
 								<p dangerouslySetInnerHTML={{ __html: step.desc }}></p>
 							</div>
 						)}

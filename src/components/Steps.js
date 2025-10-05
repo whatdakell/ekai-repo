@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import '../styles/components/_steps.scss';
 
 function Steps({ steps }) {
 	const [animate, setAnimate] = useState(false);
 
 	useEffect(() => {
-		// Trigger animation once component mounts
 		const timer = setTimeout(() => setAnimate(true), 400);
 		return () => clearTimeout(timer);
 	}, []);

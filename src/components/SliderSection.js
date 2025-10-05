@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/layout/_header.scss';
-// import './styles/main.scss';
 import Slider from './Slider';
 import ViewportTrigger from './ViewportTrigger';
 import Button from './Button';

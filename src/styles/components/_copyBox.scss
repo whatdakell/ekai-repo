@@ -1,0 +1,75 @@
+// Start of second section
+@import '../abstracts/mixins';
+.copy-box {
+	text-align: center;
+	margin-bottom: toRem(60);
+	.figure {
+		max-width: 600px;
+		width: 100%;
+		margin: 60px auto;
+	}
+	p {
+		text-align: center;
+		+ p {
+			margin-top: 20px;
+		}
+	}
+	&-p {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+
+		img {
+			max-width: 430px;
+			width: auto;
+		}
+	}
+	&-left {
+		text-align: left;
+		display: flex;
+		align-items: inherit;
+		@include bp(S) {
+			flex-direction: column;
+			p,
+			.copy-box-p p,
+			.copy-box-p,
+			.copy-box-inner {
+				width: 100% !important;
+			}
+		}
+		.copy-box-inner {
+			width: 70%;
+			margin-right: auto;
+			h2 {
+				width: 100% !important;
+			}
+			+ .btn {
+				margin-top: 30px;
+			}
+			@include bp(S) {
+				width: 100%;
+			}
+		}
+		h2 {
+			text-align: left;
+			padding-right: 10px;
+			width: 70%;
+			@include bp(S) {
+				width: 100%;
+			}
+		}
+		p {
+			max-width: 438px;
+			text-align: left;
+		}
+	}
+	h2 {
+		margin-bottom: toRem(50);
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:has(~ .figure, ~ .cards) {
+			margin-bottom: 0;
+		}
+	}
+}

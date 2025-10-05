@@ -9,8 +9,8 @@ export default function PricingTable({ data: { heading, plans, footnote } }) {
 
 			<div className='pricing-grid'>
 				{plans.map((plan, index) => (
-					<ViewportTrigger stagger>
-						<div key={index} className='pricing-card'>
+					<ViewportTrigger stagger key={index}>
+						<div className='pricing-card'>
 							<h3>{plan.name}</h3>
 							<div className='top-price border-card'>
 								<p className='price t30-text'>{plan.price}</p>

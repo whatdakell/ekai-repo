@@ -7,7 +7,7 @@ const Footer = () => {
 			<div className='footer-content'>
 				<div className='footer-left'>
 					<a className='logo' aria-label='ekai' href='/'>
-						<img src='/images/logo.svg'></img>
+						<img src='/images/logo.svg' alt='Ekai logo'></img>
 					</a>
 					<p>Join our newsletter and stay up to date with Ekai.</p>
 

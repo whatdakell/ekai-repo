@@ -42,7 +42,7 @@
 			justify-content: space-between;
 			@include bp(S) {
 				flex-direction: column;
-				align-items: self-start;
+				align-items: flex-start;
 				input {
 					margin-bottom: 20px;
 				}
@@ -83,7 +83,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		align-items: end;
+		align-items: flex-end;
 		.linkedin img {
 			width: 28px;
 			height: 28px;

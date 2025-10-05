@@ -11,7 +11,6 @@ export function useInView(options = {}) {
 				if (entry.isIntersecting) {
 					setInView(true);
 					if (once && ref.current) {
-						// stop observing after first intersection
 						observer.unobserve(ref.current);
 					}
 				} else if (!once) {

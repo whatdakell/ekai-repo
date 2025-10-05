@@ -1,11 +1,18 @@
-import React, { useRef, useState, useEffect } from 'react';
-import '../styles/components/_CopyMediaBlock.scss';
-export default function CopyMediaBlock({ data: { type = 'video', src, poster, alt, heading, copy } }) {
-	console.log(poster);
+import React, { useRef, useState, useEffect, forwardRef } from 'react';
+import '../styles/components/_copyMediaBlock.scss';
+
+const CopyMediaBlock = forwardRef(function CopyMediaBlock({ data: { type = 'video', src, poster, alt, heading, copy } }, forwardedRef) {
 	const mediaRef = useRef(null);
 	const containerRef = useRef(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isVisible, setIsVisible] = useState(false);
+
+	// 🪄 merge both refs (forwarded + local)
+	const setRefs = (node) => {
+		containerRef.current = node;
+		if (typeof forwardedRef === 'function') forwardedRef(node);
+		else if (forwardedRef) forwardedRef.current = node;
+	};
 
 	const handlePlayPause = () => {
 		if (!mediaRef.current) return;
@@ -18,7 +25,6 @@ export default function CopyMediaBlock({ data: { type = 'video', src, poster, al
 		}
 	};
 
-	// Sync state with actual video events (in case user uses keyboard/taps video)
 	useEffect(() => {
 		const video = mediaRef.current;
 		if (!video) return;
@@ -46,20 +52,16 @@ export default function CopyMediaBlock({ data: { type = 'video', src, poster, al
 	}, []);
 
 	return (
-		<section className='media-section inner-max-width-tight content' ref={containerRef}>
+		<section
+			className='media-section inner-max-width-tight content'
+			ref={setRefs} // ✅ merged refs used here
+		>
 			<h2 className='media-title' dangerouslySetInnerHTML={{ __html: heading }}></h2>
 
 			<div className={`media-wrapper ${isVisible ? 'zoomed' : ''}`}>
 				{type === 'video' ? (
 					<>
-						<video
-							ref={mediaRef}
-							className='media-element'
-							src={src}
-							poster={poster}
-							playsInline
-							onClick={handlePlayPause} // allow clicking video itself
-						/>
+						<video ref={mediaRef} className='media-element' src={src} poster={poster} playsInline onClick={handlePlayPause} />
 						{!isPlaying && (
 							<button className='custom-play-btn' onClick={handlePlayPause}>
 								<span className='play-icon'>▶</span>
@@ -70,7 +72,10 @@ export default function CopyMediaBlock({ data: { type = 'video', src, poster, al
 					<img src={src} alt={alt || 'Media preview'} className='media-element' />
 				)}
 			</div>
+
 			{copy && <p className='larger-p' dangerouslySetInnerHTML={{ __html: copy }}></p>}
 		</section>
 	);
-}
+});
+
+export default CopyMediaBlock;
