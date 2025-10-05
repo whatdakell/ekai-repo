@@ -14,6 +14,8 @@ npm start
 
 npm run build
 
+# 📂 Project Structure
+```
 ekai-platform/
 ├── public/
 │ ├── images/ # Static images
@@ -29,9 +31,10 @@ ekai-platform/
 │ └── index.js # Application entry point
 ├── package.json # Dependencies and scripts
 └── README.md # Documentation
+```
 
-Styling Guide
-
+# 🎨 Styling Guide
+```
 styles/
 ├── abstracts/
 │ ├── \_variables.scss // Color, font, spacing variables
@@ -42,9 +45,17 @@ styles/
 ├── components/ // Component-specific styles
 ├── layout/ // Layout components (header,footer)
 └── main.scss // Main stylesheet
+```
 
-BreakPoints
+
+## BreakPoints
+```
 // Mobile first approach
 @include bp(S) { } // < 768px
 @include bp(M) { } // < 1024px
 @include bp(desktop) { } // < 1200px
+```
+
+
+
+
