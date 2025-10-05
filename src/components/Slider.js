@@ -9,7 +9,7 @@ function Slider({ slides }) {
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 768) {
-				setSlidesPerView(1);
+				setSlidesPerView(1.1);
 			} else if (window.innerWidth < 1024) {
 				setSlidesPerView(2);
 			} else {
@@ -24,12 +24,13 @@ function Slider({ slides }) {
 
 	useEffect(() => {
 		// Reset index if it's out of bounds when slidesPerView changes
-		if (current > slides.length - slidesPerView) {
-			setCurrent(Math.max(0, slides.length - slidesPerView));
+		const newMaxScroll = slides.length > slidesPerView ? slides.length - slidesPerView : 0;
+		if (current > newMaxScroll) {
+			setCurrent(newMaxScroll);
 		}
 	}, [slidesPerView, current, slides.length]);
 
-	const maxScroll = slides.length - slidesPerView;
+	const maxScroll = slides.length > slidesPerView ? slides.length - slidesPerView : 0;
 
 	const prevSlide = () => {
 		if (current > 0) setCurrent(current - 1);
