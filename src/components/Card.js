@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '../styles/components/_card.scss';
 
-export default function Card({ children, className }) {
+export default memo(function Card({ children, className }) {
 	return <div className={`card ${className || ''}`}>{children}</div>;
-}
+});

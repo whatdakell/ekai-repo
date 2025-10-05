@@ -1,9 +1,9 @@
-// src/components/CopyBox.js
-import React from 'react';
+import React, { memo } from 'react';
 import Button from './Button';
 import '../styles/components/_copyBox.scss';
 
-export default function CopyBox({ heading, copy, image, button, children, className = '', variant = 'default', id }) {
+// Main CopyBox component
+const CopyBox = memo(function CopyBox({ heading, copy, image, button, children, className = '', variant = 'default', id }) {
 	const classes = ['copy-box', variant !== 'default' && `copy-box-${variant}`, variant === 'org' && 'org', className].filter(Boolean).join(' ');
 
 	const renderHTML = (content) => (typeof content === 'string' && content.includes('<') ? <p dangerouslySetInnerHTML={{ __html: content }} /> : <p>{content}</p>);
@@ -24,10 +24,10 @@ export default function CopyBox({ heading, copy, image, button, children, classN
 			{button && <Button href={button.href || '#'} text={button.text} btnStyle={button.style || 'btn-gradient'} />}
 		</div>
 	);
-}
+});
 
-// Optional compact wrapper version
-export function CopyBoxWithInner({ heading, copy, button, className = '', wrapperClass = '' }) {
+// Named export for the wrapper version
+export const CopyBoxWithInner = memo(function CopyBoxWithInner({ heading, copy, button, className = '', wrapperClass = '' }) {
 	return (
 		<div className={`copy-box copy-box-left ${wrapperClass}`}>
 			<div className={`copy-box-inner ${className}`}>
@@ -38,4 +38,6 @@ export function CopyBoxWithInner({ heading, copy, button, className = '', wrappe
 			{button && <Button href={button.href || '#'} text={button.text} btnStyle={button.style || 'btn-gradient'} />}
 		</div>
 	);
-}
+});
+
+export default CopyBox;

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '../styles/layout/_header.scss';
 import Slider from './Slider';
 import ViewportTrigger from './ViewportTrigger';
 import Button from './Button';
-function SliderSection({ content }) {
+export default memo(function SliderSection({ content }) {
 	return (
 		<ViewportTrigger>
 			<div className='slider-section vertical-spacing'>
@@ -21,6 +21,4 @@ function SliderSection({ content }) {
 			</div>
 		</ViewportTrigger>
 	);
-}
-
-export default SliderSection;
+});

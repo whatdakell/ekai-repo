@@ -84,6 +84,9 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-end;
+		p {
+			font-size: 10px;
+		}
 		.linkedin img {
 			width: 28px;
 			height: 28px;
@@ -97,6 +100,7 @@
 			gap: 0.5rem;
 			.cooth {
 				color: #c5c4ca;
+				font-size: 8px;
 			}
 			a {
 				color: #c5c4ca;

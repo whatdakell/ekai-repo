@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import '../styles/components/_team.scss';
 
 import ViewportTrigger from './ViewportTrigger';
 
-export default function Team({ data: { heading, team } }) {
+export default memo(function Team({ data: { heading, team } }) {
 	const [expandedIndex, setExpandedIndex] = useState(null);
 
 	const toggleExpand = (index) => {
@@ -42,4 +42,4 @@ export default function Team({ data: { heading, team } }) {
 			</div>
 		</div>
 	);
-}
+});

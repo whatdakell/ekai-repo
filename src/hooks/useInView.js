@@ -6,13 +6,16 @@ export function useInView(options = {}) {
 	const [inView, setInView] = useState(false);
 
 	useEffect(() => {
+		const node = ref.current; // ✅ snapshot the current element once
+		if (!node) return;
+
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				if (entry.isIntersecting) {
 					setInView(true);
-					if (once && ref.current) {
-						observer.unobserve(ref.current);
-					}
+
+					// stop observing if once = true
+					if (once) observer.unobserve(node);
 				} else if (!once) {
 					setInView(false);
 				}
@@ -20,10 +23,11 @@ export function useInView(options = {}) {
 			{ threshold, ...rest }
 		);
 
-		if (ref.current) observer.observe(ref.current);
+		observer.observe(node);
 
+		// cleanup uses the same node reference
 		return () => {
-			if (ref.current) observer.unobserve(ref.current);
+			if (node) observer.unobserve(node);
 		};
 	}, [once, threshold, rest]);
 

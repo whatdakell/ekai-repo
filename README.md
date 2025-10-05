@@ -2,50 +2,49 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <!-- scale docu per component -->
 
-## Available Scripts
+# Install dependencies
 
-In the project directory, you can run:
+npm install
 
-### `npm start`
+# Start development server
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+npm start
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Build for production
 
-### `npm build`
+npm run build
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ekai-platform/
+├── public/
+│ ├── images/ # Static images
+│ ├── videos/ # Video assets
+│ └── index.html # HTML template
+├── src/
+│ ├── components/ # React components
+│ ├── content/ # Content configuration
+│ ├── hooks/ # Custom React hooks
+│ ├── styles/ # SCSS styles
+│ ├── utils/ # Utility functions
+│ ├── App.js # Main application component
+│ └── index.js # Application entry point
+├── package.json # Dependencies and scripts
+└── README.md # Documentation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Styling Guide
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+styles/
+├── abstracts/
+│ ├── \_variables.scss // Color, font, spacing variables
+│ ├── \_mixins.scss // Reusable mixins
+│ └── \_animations.scss // Animation definitions
+├── base/
+│ └── \_typography.scss // Typography rules
+├── components/ // Component-specific styles
+├── layout/ // Layout components (header,footer)
+└── main.scss // Main stylesheet
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+BreakPoints
+// Mobile first approach
+@include bp(S) { } // < 768px
+@include bp(M) { } // < 1024px
+@include bp(desktop) { } // < 1200px

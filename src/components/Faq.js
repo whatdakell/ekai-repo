@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import '../styles/components/_faq.scss';
 import ViewportTrigger from './ViewportTrigger';
 
-export default function Faq({ data: { heading, faqs } }) {
+export default memo(function Faq({ data: { heading, faqs } }) {
 	const [activeIndex, setActiveIndex] = useState(null);
 
 	const toggle = (index) => {
@@ -31,4 +31,4 @@ export default function Faq({ data: { heading, faqs } }) {
 			</ViewportTrigger>
 		</div>
 	);
-}
+});

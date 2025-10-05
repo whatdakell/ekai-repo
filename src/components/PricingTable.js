@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '../styles/components/_pricingTimeline.scss';
 import ViewportTrigger from './ViewportTrigger';
 
-export default function PricingTable({ data: { heading, plans, footnote } }) {
+export default memo(function PricingTable({ data: { heading, plans, footnote } }) {
 	return (
 		<div className='pricing-section inner-max-width-tight'>
 			<h2>{heading}</h2>
@@ -43,4 +43,4 @@ export default function PricingTable({ data: { heading, plans, footnote } }) {
 			<p className='note center' dangerouslySetInnerHTML={{ __html: footnote }}></p>
 		</div>
 	);
-}
+});
