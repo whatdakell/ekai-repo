@@ -23,7 +23,7 @@ ekai-platform/
 │ └── index.html # HTML template
 ├── src/
 │ ├── components/ # React components
-│ ├── content/ # Content configuration
+│ ├── content/ # Content configuration (ALL COPY IS SERVED FROM THIS FILE)
 │ ├── hooks/ # Custom React hooks
 │ ├── styles/ # SCSS styles
 │ ├── utils/ # Utility functions
