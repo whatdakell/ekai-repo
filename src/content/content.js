@@ -96,7 +96,7 @@ export const content = {
 	accordion: {
 		heading: 'Your data platforms, <br>ready for any situation',
 		tableHeader: ['Role/Function', 'Challenge', 'With Ekai'],
-		footnote: 'These are just a few examples. Everyone that has a question and access to ekai can connect the dots.',
+		footnote: 'These are just a few examples. Everyone that has a question and access to Ekai can connect the dots.',
 		roles: [
 			{
 				role: 'Sales',

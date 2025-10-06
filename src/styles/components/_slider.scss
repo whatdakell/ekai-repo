@@ -4,7 +4,7 @@
 .slider {
 	position: relative;
 	width: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 .slider-wrapper {
@@ -42,14 +42,20 @@
 }
 
 .nav-btns {
+	// position: absolute;
+	// top: 50%;
+	// width: 100%;
+	// display: flex;
+	// justify-content: space-between;
+	// transform: translateY(-50%);
 	position: absolute;
 	top: 50%;
-	width: 100%;
+	width: 110%;
 	display: flex;
 	justify-content: space-between;
 	transform: translateY(-50%);
-	// pointer-events: none;
-
+	left: 50%;
+	transform: translate(-50%, -50%);
 	.nav-btn {
 		font-family: $font-family-default;
 		font-weight: 300;
@@ -68,12 +74,12 @@
 .slider-section {
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
+	// overflow: hidden;
 	position: relative;
-	// max-width: 1200px;
+	max-width: 1200px;
 	margin: 2rem auto;
 	// padding-left: 50px;
-	// padding: 0 60px;
+	padding: 0 60px;
 
 	// @include bp(M) {
 	// 	padding: 0 50px;
@@ -93,7 +99,7 @@
 	}
 
 	.slider-wrapper {
-		padding: 0 40px;
+		// padding: 0 40px;
 		box-sizing: border-box;
 
 		// @include bp(S) {

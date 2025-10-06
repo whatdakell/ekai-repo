@@ -23,7 +23,7 @@ function App() {
 			<HeaderNav />
 			<Hero headline={content.hero.headline} copy={content.hero.copy} steps={content.hero.steps} />
 
-			<section className='inner-max-width center anchor' id='aboutEK'>
+			<section className='inner-max-width center anchor' id='about'>
 				<ViewportTrigger>
 					<CopyBox variant='org' className='inner-max-width-tight' heading={content.organizationModule.headline} copy={content.organizationModule.copy} />
 					<div className='cards'>
@@ -84,7 +84,7 @@ function App() {
 			</ViewportTrigger>
 
 			<ViewportTrigger>
-				<section className='content inner-max-width center anchor' id='about'>
+				<section className='content inner-max-width center anchor' id='team'>
 					<Team data={content.teamSection} />
 				</section>
 			</ViewportTrigger>

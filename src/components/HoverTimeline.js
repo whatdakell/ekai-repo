@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/components/_hoverTimeline.scss';
 
 export default function HoverTimeline({ data: { heading, copy, steps } }) {
-	const [active, setActive] = useState(null);
+	const [active, setActive] = useState(0);
 
 	const progressIndex = active !== null ? active : -1;
 

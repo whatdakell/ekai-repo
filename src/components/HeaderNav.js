@@ -45,11 +45,11 @@ function HeaderNav() {
 				{/* Desktop Menu */}
 				<nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
 					<div className='nav-wrapper'>
-						<a href='#aboutEK' className='active'>
+						<a href='#about' className='active'>
 							About
 						</a>
 						<a href='#how'>How It Works</a>
-						<a href='#about'>Team</a>
+						<a href='#team'>Team</a>
 						<a href='#pricing'>Pricing</a>
 						<a href='#contact'>Contact</a>
 					</div>
